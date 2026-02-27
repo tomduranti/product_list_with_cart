@@ -1,0 +1,15 @@
+@use "../abstract/mixins" as mix;
+@use "../abstract/functions" as func;
+@use "sass:map";
+
+$font_family: "Red Hat Text", sans-serif;
+
+$presets: (
+    1: ($font_family, func.to_rem(40), 700, 1.2, 0),
+    2: ($font_family, func.to_rem(24), 700, 1.25, 0),
+    3: ($font_family, func.to_rem(16), 600, 1.5, 0),
+    4: ($font_family, func.to_rem(14), 400, 1.5, 0),
+    "4--bold": ($font_family, func.to_rem(14), 700, 1.5, 0),
+);
+
+@each $key, $value in $presets { .text_preset_#{$key} { @include mix.typography($value... ) }; }

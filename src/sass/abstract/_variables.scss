@@ -1,0 +1,62 @@
+@use "./functions" as func;
+@use "sass:map";
+
+//==========================================================
+//  PRIMITIVES
+//==========================================================
+
+//COLORS
+$black: hsl(0deg, 0, 0);
+
+$green: hsl(159deg, 69%, 38%);
+
+$red: hsl(14deg, 86%, 42%);
+
+$rose--50: hsl(20deg, 50%, 98%);
+$rose--100: hsl(13deg, 31%, 94%);
+$rose--300: hsl(14deg, 25%, 72%);
+$rose--400: hsl(7deg, 20%, 60%);
+$rose--500: hsl(12deg, 20%, 44%);
+$rose--900: hsl(14deg, 65%, 9%);
+
+$white: hsl(0deg, 0, 100%);
+
+//SPACING
+$spacing: (
+  0:    0,       
+  4:   func.to_rem(4),
+  8:   func.to_rem(8),
+  12:  func.to_rem(12),
+  16:  func.to_rem(16),
+  24:  func.to_rem(24),
+  32:  func.to_rem(32),
+  40:  func.to_rem(40),
+  88:  func.to_rem(88),
+);
+
+$special_spacing: (
+  1: func.to_rem(1),
+  2: func.to_rem(2),
+  5: func.to_rem(5),
+);
+
+//==========================================================
+//  DESIGN TOKENS
+//==========================================================
+
+/* TOKEN TAXONOMY
+* $spacetype_direction_scale_breakpoint
+* spacetype: spacing such as margin or padding;
+* direction: inline or block;
+* scale: control (atoms), component (molecules), section (organisms), layout (pages);
+* breakpoint: sm, md, lg, xl;
+*/
+
+//COLORS
+
+
+//SPACING
+
+
+//Circle and radius
+$radius_pill: 999px;
