@@ -1,0 +1,21 @@
+@use '../../../sass/abstract/variables' as *;
+
+.carbon_neutral_info {
+    inline-size: 100%;
+
+    border-radius: $radius_mild_pill;
+
+    padding-block: $padding_block_controls_md;
+
+    background-color: $primary_background_color_rose;
+
+    &__container {
+        @extend %flex_center;
+        gap: $gap_inline_controls_sm;
+        height: 20px; //magic number to meet the design
+    }
+
+    &__text {
+        color: $primary_text_rose;
+    }
+}

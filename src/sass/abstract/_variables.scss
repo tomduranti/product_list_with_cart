@@ -41,6 +41,16 @@ $special_spacing: (
 );
 
 //==========================================================
+//  UTILS
+//==========================================================
+
+%flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+//==========================================================
 //  DESIGN TOKENS
 //==========================================================
 
@@ -56,6 +66,7 @@ $special_spacing: (
 $primary_bg_white: $white;
 $primary_text_rose: $rose--900;
 $primary_border_color_rose: $rose--400;
+$primary_background_color_rose: $rose--50;
 
 $secondary_border_color_red: $red;
 $secondary_text_red: $red;
@@ -69,6 +80,7 @@ $gap_inline_controls_sm: map.get($spacing, 8);
 //Padding & margin
 $padding_controls_sm: map.get($spacing, 12);
 $padding_block_controls_sm: map.get($spacing, 12);
+$padding_block_controls_md: map.get($spacing, 16);
 $padding_inline_controls_sm: map.get($spacing, 12);
 $padding_inline_controls_md: calc(map.get($spacing, 24) + map.get($spacing, 4));
 
@@ -76,4 +88,5 @@ $padding_inline_controls_md: calc(map.get($spacing, 24) + map.get($spacing, 4));
 $inlinesize_controls_sm: calc(map.get($spacing, 40) * 4);
 
 //Radius
+$radius_mild_pill: func.to_rem(8);
 $radius_pill_button: func.to_rem(32);

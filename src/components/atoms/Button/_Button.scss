@@ -9,9 +9,7 @@
 
 
     &__container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @extend %flex_center;
         
         &--gap {
             gap: $gap_inline_controls_sm;
