@@ -84,8 +84,9 @@ $padding_block_controls_md: map.get($spacing, 16);
 $padding_inline_controls_sm: map.get($spacing, 12);
 $padding_inline_controls_md: calc(map.get($spacing, 24) + map.get($spacing, 4));
 
-//Inline-size
+//Inline/Block size
 $inlinesize_controls_sm: calc(map.get($spacing, 40) * 4);
+$blocksize_controls_sm: calc(map.get($spacing, 40) * 5 + map.get($spacing, 12));
 
 //Radius
 $radius_mild_pill: func.to_rem(8);
