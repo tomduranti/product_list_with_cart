@@ -7,22 +7,32 @@
     border: 1px solid transparent;
     border-radius: $radius_pill_button;
 
+
     &__container {
         display: flex;
+        justify-content: center;
         align-items: center;
-        gap: $gap_inline_controls_sm;
+        
+        &--gap {
+            gap: $gap_inline_controls_sm;
+        }
+
+        &--space_between {
+            justify-content: space-between;
+        }
     }
 
     &__text {
         line-height: normal; // just to reduce lh of container
     }
 
+
     &--cta_add_to_cart {
         background-color: $primary_bg_white;
 
         border-color: $primary_border_color_rose;
 
-        padding: $padding_block_controls_sm $padding_inline_controls_sm;
+        padding: $padding_block_controls_sm $padding_inline_controls_md;
 
         color: $primary_text_rose;
 
@@ -32,5 +42,26 @@
             border-color: $secondary_border_color_red;
             color: $secondary_text_red;
         }
+    }
+
+    &--bg_red {
+        background-color: $secondary_bg_red;
+
+        border-color: $secondary_border_color_red;
+    }
+
+
+    &--cta_counter {
+        padding: $padding_controls_sm;
+
+        inline-size: 100%;
+        max-inline-size: $inlinesize_controls_sm;
+    }
+
+
+    &--cta_order {
+        padding: $padding_inline_controls_sm;
+
+        inline-size: 100%;
     }
 }
