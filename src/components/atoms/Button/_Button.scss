@@ -1,0 +1,36 @@
+@use '../../../sass/abstract/variables' as *;
+@use '../../../sass/abstract/mixins' as mix;
+
+.button {
+    text-transform: capitalize;
+
+    border: 1px solid transparent;
+    border-radius: $radius_pill_button;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        gap: $gap_inline_controls_sm;
+    }
+
+    &__text {
+        line-height: normal; // just to reduce lh of container
+    }
+
+    &--cta_add_to_cart {
+        background-color: $primary_bg_white;
+
+        border-color: $primary_border_color_rose;
+
+        padding: $padding_block_controls_sm $padding_inline_controls_sm;
+
+        color: $primary_text_rose;
+
+        @include mix.transition(all, .3s, ease);
+
+        &:hover {
+            border-color: $secondary_border_color_red;
+            color: $secondary_text_red;
+        }
+    }
+}

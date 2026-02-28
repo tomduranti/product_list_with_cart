@@ -11,3 +11,6 @@ const preview = {
 };
 
 export default preview;
+
+import '../src/sass/abstract/_reset.scss';
+import '../src/sass/base/_typography.scss';

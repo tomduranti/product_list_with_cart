@@ -6,7 +6,7 @@
 //==========================================================
 
 //COLORS
-$black: hsl(0deg, 0, 0);
+$black: hsl(0deg, 0%, 0%);
 
 $green: hsl(159deg, 69%, 38%);
 
@@ -19,7 +19,7 @@ $rose--400: hsl(7deg, 20%, 60%);
 $rose--500: hsl(12deg, 20%, 44%);
 $rose--900: hsl(14deg, 65%, 9%);
 
-$white: hsl(0deg, 0, 100%);
+$white: hsl(0deg, 0%, 100%);
 
 //SPACING
 $spacing: (
@@ -53,10 +53,20 @@ $special_spacing: (
 */
 
 //COLORS
+$primary_bg_white: $white;
+$primary_text_rose: $rose--900;
+$primary_border_color_rose: $rose--400;
 
+$secondary_border_color_red: $red;
+$secondary_text_red: $red;
 
 //SPACING
 
+//Gap
+$gap_inline_controls_sm: map.get($spacing, 8);
+
+$padding_block_controls_sm: map.get($spacing, 12);
+$padding_inline_controls_sm: calc(map.get($spacing, 24) + map.get($spacing, 4));
 
 //Circle and radius
-$radius_pill: 999px;
+$radius_pill_button: func.to_rem(32);
