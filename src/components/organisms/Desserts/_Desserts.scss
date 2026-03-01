@@ -1,20 +1,27 @@
 @use '../../../sass/abstract/variables' as *;
+@use '../../../sass/abstract/mixins' as *;
 
 .desserts {
 
    margin-block-end: $margin_blockend_components_md;
 
-     &__heading {
-        text-transform: capitalize;
-        color: $primary_text_rose--900;
+   &__heading {
+      text-transform: capitalize;
+      color: $primary_text_rose--900;
 
-        margin-block-end: $margin_blockend_components_md;
-     }
+      margin-block-end: $margin_blockend_components_md;
+   }
 
 
-     &__grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: $gap_block_controls_lg;
-     }
+   &__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: $gap_block_controls_lg;
+
+      @include respond_to(min, m_screen) {
+         grid-template-columns: repeat(auto-fit, minmax(min(207.5px, 213.33px), 1fr));
+         row-gap: $gap_block_controls_xlg;
+         column-gap: $gap_inline_controls_lg;
+      }
+   }
 }

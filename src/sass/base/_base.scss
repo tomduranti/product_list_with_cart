@@ -1,4 +1,5 @@
 @use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
 
 .page {
     min-block-size: 100vh;
@@ -11,6 +12,10 @@
         padding-block: $padding_block_layout_sm;
         margin-inline: auto;
 
+        @include respond_to(min, m_screen) {
+            max-inline-size: $container_inline_layout_md;
 
+            padding-block: $padding_block_layout_md;
+        }
     }
 }
