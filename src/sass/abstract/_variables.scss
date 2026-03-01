@@ -80,6 +80,7 @@ $secondary_bg_red: $red;
 $gap_inline_controls_sm: map.get($spacing, 8);
 $gap_block_controls_sm: map.get($spacing, 4);
 $gap_block_controls_md: map.get($spacing, 16);
+$gap_block_controls_lg: map.get($spacing, 24);
 
 //Padding & margin
 $padding_controls_sm: map.get($spacing, 12);
@@ -94,6 +95,7 @@ $margin_block_components_sm: map.get($spacing, 24);
 $margin_block_components_md: calc(map.get($spacing, 32) + map.get($spacing, 4) + map.get($special_spacing, 2));
 $margin_blockstart_components_sm: map.get($spacing, 16);
 $margin_blockend_components_sm: map.get($spacing, 24);
+$margin_blockend_components_md: map.get($spacing, 32);
 
 //Inline/Block size
 $inlinesize_controls_sm: calc(map.get($spacing, 40) * 4);

@@ -1,0 +1,20 @@
+@use '../../../sass/abstract/variables' as *;
+
+.desserts {
+
+   margin-block-end: $margin_blockend_components_md;
+
+     &__heading {
+        text-transform: capitalize;
+        color: $primary_text_rose--900;
+
+        margin-block-end: $margin_blockend_components_md;
+     }
+
+
+     &__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: $gap_block_controls_lg;
+     }
+}
