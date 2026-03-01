@@ -50,20 +50,6 @@ export const WaffleGridItemCart = {
         name: 'Waffle',
         description: 'Waffle with Berries',
         price: '$6.50',
-        isButtonCart: true
-    }
-};
-
-export const WaffleGridItemCounter = {
-    args: { 
-        mobileSrc: waffleMobile,
-        tabletSrc: waffleTablet,
-        desktopSrc: waffleDesktop,
-        alt: 'waffle dessert',
-        name: 'Waffle',
-        description: 'Waffle with Berries',
-        price: '$6.50',
-        isButtonCart: false
     }
 };
 

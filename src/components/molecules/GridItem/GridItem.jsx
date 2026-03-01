@@ -6,7 +6,7 @@ import ButtonAddToCart from '../../atoms/Button/ButtonAddToCart.jsx';
 import ButtonCounter from '../../atoms/Button/ButtonCounter.jsx';
 
 export default function GridItem({ desktopSrc, tabletSrc, mobileSrc, alt, name, description, price }) {
-    const [toggle, setToggle] = useState(false);
+    const [toggle, setToggle] = useState(true);
     
     return (
         <div className="grid_item">
@@ -22,9 +22,9 @@ export default function GridItem({ desktopSrc, tabletSrc, mobileSrc, alt, name, 
                 </picture>
             </div>
             <div className='grid_item__info'>
-                <span className='grid_item__name text_preset_4'>{name}</span>
-                <h3 className='grid_item__description text_preset_3'>{description}</h3>
-                <h4 className='grid_item__price text_preset_3'>{price}</h4>
+                <span className='grid_item__name  text_preset_4'>{name}</span>
+                <h3 className='grid_item__description  text_preset_3'>{description}</h3>
+                <span className='grid_item__price  text_preset_3'>{price}</span>
             </div>
         </div>
     )

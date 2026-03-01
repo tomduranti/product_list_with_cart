@@ -1,0 +1,40 @@
+@use '../../../sass/abstract/variables' as *;
+
+.cart {
+    inline-size: 100%;
+
+    background-color: $white;
+
+    border-radius: $radius_avg_pill;
+
+    &__container {
+        padding: $padding_controls_md;
+    }
+
+    &__heading {
+        text-transform: capitalize;
+        color: $primary_text_red;
+
+        margin-block-end: $margin_blockend_components_sm;
+    }
+}
+
+.placeholder {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+    max-inline-size: 279px;
+
+    &__image {
+        margin-block: $margin_block_components_xs;
+        margin-inline: auto;
+    }
+
+    &__text {
+        margin-block-end: $margin_block_components_xs;
+
+        text-align: center;
+        color: $primary_text_rose--500;
+    }
+}
