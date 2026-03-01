@@ -1,5 +1,5 @@
 @use '../../../sass/abstract/variables' as *;
-@use '../../../sass/abstract/mixins' as mix;
+@use '../../../sass/abstract/mixins' as *;
 
 .button {
     text-transform: capitalize;
@@ -11,7 +11,7 @@
 
     &__container {
         @extend %flex_center;
-        
+
         &--gap {
             gap: $gap_inline_controls_sm;
         }
@@ -39,7 +39,7 @@
         max-inline-size: $inlinesize_controls_sm;
         block-size: $blocksize_controls_button;
 
-        @include mix.transition(all, .3s, ease);
+        @include transition(all, .3s, ease);
 
         &:hover {
             border-color: $secondary_border_color_red;
@@ -58,6 +58,10 @@
         bottom: -22%;
         left: 50%;
         transform: translate(-50%, -50%);
+
+        @include respond_to(min, l_screen) {
+            bottom: -19%;
+        }
     }
 
 

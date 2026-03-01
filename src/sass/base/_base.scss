@@ -17,5 +17,14 @@
 
             padding-block: $padding_block_layout_md;
         }
+
+        @include respond_to(min, l_screen) {
+            display: grid;
+            grid-template-columns: 1fr 384px; //magic number to match design
+            column-gap: $gap_block_controls_xlg;
+
+            padding-block: $padding_block_layout_lg;
+            margin-inline: $margin_inline_layout_lg;
+        }
     }
 }
