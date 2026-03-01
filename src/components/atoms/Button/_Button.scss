@@ -3,6 +3,7 @@
 
 .button {
     text-transform: capitalize;
+    text-wrap: nowrap; //to prevent text from wrapping at small vw size
 
     border: 1px solid transparent;
     border-radius: $radius_pill_button;
@@ -21,18 +22,24 @@
     }
 
     &__text {
-        line-height: normal; // just to reduce lh of container
+        line-height: normal; //just to reduce lh of container
     }
 
 
     &--cta_add_to_cart {
+        
+        position: absolute;
+        bottom: 33%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
         background-color: $primary_bg_white;
 
         border-color: $primary_border_color_rose;
 
         padding: $padding_block_controls_sm $padding_inline_controls_md;
 
-        color: $primary_text_rose;
+        color: $primary_text_rose--900;
 
         @include mix.transition(all, .3s, ease);
 

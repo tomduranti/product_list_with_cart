@@ -1,0 +1,43 @@
+@use '../../../sass/abstract/variables' as *;
+
+.grid_item {
+    
+    inline-size: 100%; //occupies full-width of grid container
+
+    &__item {
+        inline-size: 100%;
+
+        block-size: $blocksize_controls_sm; //magic number according to design
+
+        margin-block-end: $margin_block_components_sm;
+    }
+
+
+    &__image {
+        inline-size: 100%;
+
+        position: relative;
+
+        border-radius: $radius_mild_pill;
+
+        block-size: $blocksize_controls_sm; //magic number according to design
+        
+        object-fit: cover;
+    }
+
+
+    &__name {
+        text-transform: capitalize;
+        color: $primary_text_rose--500;
+    }
+
+
+    &____description {
+        color: $primary_text_rose--900;
+    }
+
+
+    &__price {
+        color: $primary_text_red;
+    }
+}

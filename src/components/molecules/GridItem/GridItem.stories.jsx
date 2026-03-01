@@ -1,6 +1,4 @@
-import ItemImage from './ItemImage';
-
-//NOTE: Storybook doesnt' seem to render source images correctly
+import GridItem from './GridItem';
 
 import waffleMobile from '../../../assets/mobile/waffle_mobile.jpg';
 import waffleTablet from '../../../assets/tablet/waffle_tablet.jpg';
@@ -22,6 +20,10 @@ import baklavaMobile from '../../../assets/mobile/baklava_mobile.jpg';
 import baklavaTablet from '../../../assets/tablet/baklava_tablet.jpg';
 import baklavaDesktop from '../../../assets/desktop/baklava_desktop.jpg';
 
+import lemonMeringueMobile from '../../../assets/mobile/meringue_mobile.jpg';
+import lemonMeringueTablet from '../../../assets/tablet/meringue_tablet.jpg';
+import lemonMeringueDesktop from '../../../assets/desktop/meringue_desktop.jpg';
+
 import velvetCakeMobile from '../../../assets/mobile/velvet_cake_mobile.jpg';
 import velvetCakeTablet from '../../../assets/tablet/velvet_cake_tablet.jpg';
 import velvetCakeDesktop from '../../../assets/desktop/velvet_cake_desktop.jpg';
@@ -35,52 +37,79 @@ import pannaCottaTablet from '../../../assets/tablet/panna_cotta_tablet.jpg';
 import pannaCottaDesktop from '../../../assets/desktop/panna_cotta_desktop.jpg';
 
 export default {
-    title: 'components/atoms/ItemImage',
-    component: ItemImage,
+    title: 'components/molecules/GridItem',
+    component: GridItem,
 }
 
-export const WaffleItemImage = {
+export const WaffleGridItem = {
     args: { 
         mobileSrc: waffleMobile,
         tabletSrc: waffleTablet,
         desktopSrc: waffleDesktop,
-        alt: 'waffle dessert'
+        alt: 'waffle dessert',
+        name: 'Waffle',
+        description: 'Waffle with Berries',
+        price: '$6.50',
     }
 };
 
-export const CremeBruleeItemImage = {
+export const CremeBruleeGridItem = {
     args: { 
         mobileSrc: cremeBruleeMobile,
         tabletSrc: cremeBruleeTablet,
         desktopSrc: cremeBruleeDesktop,
-        alt: 'creme brulee dessert'
+        alt: 'crème brûlée dessert',
+        name: 'Crème Brûlée',
+        description: 'Vanilla Bean Crème Brûlée',
+        price: '$7.00',
     }
 };
 
-export const MacaronItemImage = {
+export const MacaronGridItem = {
     args: { 
         mobileSrc: macaronMobile,
         tabletSrc: macaronTablet,
         desktopSrc: macaronDesktop,
-        alt: 'macaron dessert'
+        alt: 'macaron dessert',
+        name: 'Macaron',
+        description: 'Macaron Mix of Five',
+        price: '$8.00',
     }
 };
 
-export const TiramisuItemImage = {
+export const TiramisuGridItem = {
     args: { 
         mobileSrc: tiramisuMobile,
         tabletSrc: tiramisuTablet,
         desktopSrc: tiramisuDesktop,
-        alt: 'tiramisu dessert'
+        alt: 'tiramisu dessert',
+        name: 'Tiramisu',
+        description: 'Classic Tiramisu',
+        price: '$5.50',
     }
 };
 
-export const BaklavaItemImage = {
+export const BaklavaGridItem = {
     args: { 
         mobileSrc: baklavaMobile,
         tabletSrc: baklavaTablet,
         desktopSrc: baklavaDesktop,
-        alt: 'baklava dessert'
+        alt: 'baklava dessert',
+        name: 'Baklava',
+        description: 'Pistachio Baklava',
+        price: '$4.00',
+    }
+};
+
+export const LemonMeringueGridItem = {
+    args: { 
+        mobileSrc: lemonMeringueMobile,
+        tabletSrc: lemonMeringueTablet,
+        desktopSrc: lemonMeringueDesktop,
+        alt: 'lemon meringue dessert',
+        name: 'Pie',
+        description: 'Lemon Meringue Pie',
+        price: '$5.00',
     }
 };
 
@@ -89,7 +118,10 @@ export const VelvetCakeItemImage = {
         mobileSrc: velvetCakeMobile,
         tabletSrc: velvetCakeTablet,
         desktopSrc: velvetCakeDesktop,
-        alt: 'velvet cake dessert'
+        alt: 'velvet cake dessert',
+        name: 'Cake',
+        description: 'Red Velvet Cake',
+        price: '$4.50',
     }
 };
 
@@ -98,7 +130,10 @@ export const BrownieItemImage = {
         mobileSrc: brownieMobile,
         tabletSrc: brownieTablet,
         desktopSrc: brownieDesktop,
-        alt: 'brownie dessert'
+        alt: 'brownie dessert',
+        name: 'Brownie',
+        description: 'Salted Caramel Brownie',
+        price: '$5.50',
     }
 };
 
@@ -107,6 +142,9 @@ export const PannaCottaItemImage = {
         mobileSrc: pannaCottaMobile,
         tabletSrc: pannaCottaTablet,
         desktopSrc: pannaCottaDesktop,
-        alt: 'panna cotta dessert'
+        alt: 'panna cotta dessert',
+        name: 'Panna Cotta',
+        description: 'Vanilla Panna Cotta',
+        price: '$6.50',
     }
 };

@@ -64,7 +64,9 @@ $special_spacing: (
 
 //COLORS
 $primary_bg_white: $white;
-$primary_text_rose: $rose--900;
+$primary_text_rose--900: $rose--900;
+$primary_text_rose--500: $rose--500;
+$primary_text_red: $red;
 $primary_border_color_rose: $rose--400;
 $primary_background_color_rose: $rose--50;
 
@@ -76,6 +78,7 @@ $secondary_bg_red: $red;
 
 //Gap
 $gap_inline_controls_sm: map.get($spacing, 8);
+$gap_block_controls_sm: map.get($spacing, 4);
 
 //Padding & margin
 $padding_controls_sm: map.get($spacing, 12);
@@ -83,6 +86,9 @@ $padding_block_controls_sm: map.get($spacing, 12);
 $padding_block_controls_md: map.get($spacing, 16);
 $padding_inline_controls_sm: map.get($spacing, 12);
 $padding_inline_controls_md: calc(map.get($spacing, 24) + map.get($spacing, 4));
+
+
+$margin_block_components_sm: calc(map.get($spacing, 32) + map.get($spacing, 4) + map.get($special_spacing, 2));
 
 //Inline/Block size
 $inlinesize_controls_sm: calc(map.get($spacing, 40) * 4);
