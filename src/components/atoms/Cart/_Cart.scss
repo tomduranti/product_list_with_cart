@@ -22,8 +22,9 @@
 .placeholder {
     display: flex;
     flex-direction: column;
-    align-self: center;
 
+    margin-inline: auto;
+    
     max-inline-size: 279px;
 
     &__image {

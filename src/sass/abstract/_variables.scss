@@ -56,7 +56,7 @@ $special_spacing: (
 
 /* TOKEN TAXONOMY
 * $spacetype_direction_scale_size
-* spacetype: spacing such as margin or padding;
+* spacetype: spacing such as margin or padding or container;
 * direction: inline or block;
 * scale: control (atoms), component (molecules), section (organisms), layout (pages);
 * size: sm, md, lg, xl;
@@ -89,6 +89,7 @@ $padding_block_controls_sm: map.get($spacing, 12);
 $padding_block_controls_md: map.get($spacing, 16);
 $padding_inline_controls_sm: map.get($spacing, 12);
 $padding_inline_controls_md: calc(map.get($spacing, 24) + map.get($spacing, 4));
+$padding_block_layout_sm: map.get($spacing, 24);
 
 $margin_block_components_xs: map.get($spacing, 16);
 $margin_block_components_sm: map.get($spacing, 24);
@@ -101,6 +102,9 @@ $margin_blockend_components_md: map.get($spacing, 32);
 $inlinesize_controls_sm: calc(map.get($spacing, 40) * 4);
 $blocksize_controls_button: calc(map.get($spacing, 40) + map.get($spacing, 4));
 $blocksize_controls_sm: calc(map.get($spacing, 40) * 5 + map.get($spacing, 12));
+
+//Container
+$container_inline_layout_sm: 87.2%;
 
 //Radius
 $radius_mild_pill: func.to_rem(8);
