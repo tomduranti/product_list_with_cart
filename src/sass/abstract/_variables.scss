@@ -92,6 +92,7 @@ $margin_block_components_sm: calc(map.get($spacing, 32) + map.get($spacing, 4) +
 
 //Inline/Block size
 $inlinesize_controls_sm: calc(map.get($spacing, 40) * 4);
+$blocksize_controls_button: calc(map.get($spacing, 40) + map.get($spacing, 4));
 $blocksize_controls_sm: calc(map.get($spacing, 40) * 5 + map.get($spacing, 12));
 
 //Radius

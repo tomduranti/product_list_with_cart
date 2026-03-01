@@ -27,12 +27,6 @@
 
 
     &--cta_add_to_cart {
-        
-        position: absolute;
-        bottom: -22%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
         background-color: $primary_bg_white;
 
         border-color: $primary_border_color_rose;
@@ -40,6 +34,10 @@
         padding: $padding_block_controls_sm $padding_inline_controls_md;
 
         color: $primary_text_rose--900;
+
+        inline-size: 100%;
+        max-inline-size: $inlinesize_controls_sm;
+        block-size: $blocksize_controls_button;
 
         @include mix.transition(all, .3s, ease);
 
@@ -55,12 +53,20 @@
         border-color: $secondary_border_color_red;
     }
 
+    &--abs_position {
+        position: absolute;
+        bottom: -22%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
 
     &--cta_counter {
         padding: $padding_controls_sm;
 
         inline-size: 100%;
         max-inline-size: $inlinesize_controls_sm;
+        block-size: $blocksize_controls_button;
     }
 
 

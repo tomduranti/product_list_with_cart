@@ -1,8 +1,13 @@
+import { useState } from 'react'
+
 import './_GridItem.scss'
 
 import ButtonAddToCart from '../../atoms/Button/ButtonAddToCart.jsx';
+import ButtonCounter from '../../atoms/Button/ButtonCounter.jsx';
 
 export default function GridItem({ desktopSrc, tabletSrc, mobileSrc, alt, name, description, price }) {
+    const [toggle, setToggle] = useState(false);
+    
     return (
         <div className="grid_item">
             <div className="grid_item__cta_image">
@@ -10,7 +15,10 @@ export default function GridItem({ desktopSrc, tabletSrc, mobileSrc, alt, name, 
                     <source srcSet={desktopSrc} media='(min-width: 90rem)' />
                     <source srcSet={tabletSrc} media='(min-width: 768px)' />
                     <img className="grid_item__image" src={mobileSrc} alt={alt} />
-                    <ButtonAddToCart />
+
+                    {/*TODO: add complete logic, this is just for demo*/}
+                    { toggle ? <ButtonAddToCart onClick={() =>setToggle(!toggle)} /> : <ButtonCounter onClick={() =>setToggle(!toggle)} /> }
+
                 </picture>
             </div>
             <div className='grid_item__info'>

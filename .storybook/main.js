@@ -3,7 +3,9 @@ const config = {
   "stories": [
     "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
   ],
-  "addons": [],
+  "addons": [
+    '@storybook/addon-interactions',
+  ],
   "framework": "@storybook/react-vite"
 };
 export default config;
