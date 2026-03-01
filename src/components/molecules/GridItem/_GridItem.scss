@@ -1,27 +1,30 @@
 @use '../../../sass/abstract/variables' as *;
 
 .grid_item {
-    
+
     inline-size: 100%; //occupies full-width of grid container
 
-    &__item {
-        inline-size: 100%;
+    &__cta_image {
+        position: relative;
 
         block-size: $blocksize_controls_sm; //magic number according to design
 
         margin-block-end: $margin_block_components_sm;
     }
 
+    &__picture {
+        inline-size: 100%;
+    }
+
 
     &__image {
-        inline-size: 100%;
 
-        position: relative;
+        inline-size: inherit;
 
         border-radius: $radius_mild_pill;
 
         block-size: $blocksize_controls_sm; //magic number according to design
-        
+
         object-fit: cover;
     }
 
