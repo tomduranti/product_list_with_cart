@@ -1,9 +1,17 @@
-@use './variables' as var;
+@use './variables' as *;
+@use './mixins' as *;
 
 .text_lowercase {
     text-transform: lowercase;
 }
 
 .text_white_color {
-    color: var.$white;
+    color: $white;
+}
+
+.added_item {
+    outline: $outline_component_sm solid $red;
+    outline-offset: calc($outline_component_sm * -1);
+
+    @include transition(outline, .05s, ease);
 }

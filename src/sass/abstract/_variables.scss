@@ -1,4 +1,4 @@
-@use "./functions" as func;
+@use "./functions" as *;
 @use "sass:map";
 
 //==========================================================
@@ -24,20 +24,20 @@ $white: hsl(0deg, 0%, 100%);
 //SPACING
 $spacing: (
   0: 0,
-  4: func.to_rem(4),
-  8: func.to_rem(8),
-  12: func.to_rem(12),
-  16: func.to_rem(16),
-  24: func.to_rem(24),
-  32: func.to_rem(32),
-  40: func.to_rem(40),
-  88: func.to_rem(88),
+  4: to_rem(4),
+  8: to_rem(8),
+  12: to_rem(12),
+  16: to_rem(16),
+  24: to_rem(24),
+  32: to_rem(32),
+  40: to_rem(40),
+  88: to_rem(88),
 );
 
 $special_spacing: (
-  1: func.to_rem(1),
-  2: func.to_rem(2),
-  5: func.to_rem(5),
+  1: to_rem(1),
+  2: to_rem(2),
+  5: to_rem(5),
 );
 
 //==========================================================
@@ -115,6 +115,9 @@ $container_inline_layout_md: 89.58%;
 $container_inline_layout_lg: 55.57%;
 
 //Radius
-$radius_mild_pill: func.to_rem(8);
-$radius_avg_pill: func.to_rem(12);
-$radius_pill_button: func.to_rem(32);
+$radius_mild_pill: to_rem(8);
+$radius_avg_pill: to_rem(12);
+$radius_pill_button: to_rem(32);
+
+//Outline
+$outline_component_sm: map.get($special_spacing, 2);
