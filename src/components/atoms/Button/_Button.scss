@@ -71,6 +71,8 @@
         inline-size: 100%;
         max-inline-size: $inlinesize_controls_sm;
         block-size: $blocksize_controls_button;
+
+        cursor: default;
     }
 
 
@@ -79,4 +81,9 @@
 
         inline-size: 100%;
     }
+}
+
+.decrease_sign,
+.increase_sign {
+    cursor: pointer;
 }

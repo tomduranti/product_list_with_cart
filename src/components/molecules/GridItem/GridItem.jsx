@@ -10,19 +10,18 @@ export default function GridItem({ desktopSrc, tabletSrc, mobileSrc, alt, name, 
     const [toggle, setToggle] = useState(true);
     let [count, setCount] = useState(1);
 
-    const MAX_LIMIT = 99;
-    const MIN_LIMIT = 0;
+    const MAX_COUNT = 99;
+    const MIN_COUNT = 0;
 
     const increaseQuantity = () => {
-        setCount(count => (count < MAX_LIMIT ? count + 1 : count));
+        setCount(count => (count < MAX_COUNT ? count + 1 : count));
     }
 
     const decreaseQuantity = () => {
-        if (count <= MIN_LIMIT) {
-            setToggle(true);
-            return;
-        }
-        setCount(count => count - 1);
+        setCount(count => {
+            if (count <= MIN_COUNT + 1) setToggle(true);
+            return count > MIN_COUNT ? count - 1 : count;
+        });
     }
 
     function resetCount() {
@@ -37,9 +36,8 @@ export default function GridItem({ desktopSrc, tabletSrc, mobileSrc, alt, name, 
                     <source srcSet={tabletSrc} media='(min-width: 48rem)' />
                     <img className={`grid_item__image ${!toggle && 'added_item'}`} src={mobileSrc} alt={alt} />
 
-                    {/*TODO: add complete logic, this is just for demo*/}
-                    {toggle ? <ButtonAddToCart onClick={() => (resetCount, setToggle(!toggle))} /> :
-                        <ButtonCounter increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} count={count} onClick={ () => ( console.log({count})) }/>}
+                    {toggle ? <ButtonAddToCart onClick={() => (resetCount(), setToggle(!toggle))} /> :
+                        <ButtonCounter increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} count={count} />}
 
                 </picture>
             </div>
