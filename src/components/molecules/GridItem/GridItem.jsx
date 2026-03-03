@@ -6,7 +6,7 @@ import './_GridItem.scss';
 import ButtonAddToCart from '../../atoms/Button/ButtonAddToCart.jsx';
 import ButtonCounter from '../../atoms/Button/ButtonCounter.jsx';
 
-export default function GridItem({ desktopSrc, tabletSrc, mobileSrc, alt, name, description, price }) {
+export default function GridItem({ image, dessert }) {
     const [toggle, setToggle] = useState(true);
     let [count, setCount] = useState(1);
 
@@ -32,19 +32,17 @@ export default function GridItem({ desktopSrc, tabletSrc, mobileSrc, alt, name, 
         <div className="grid_item">
             <div className="grid_item__cta_image">
                 <picture className="grid_item__picture">
-                    <source srcSet={desktopSrc} media='(min-width: 90rem)' />
-                    <source srcSet={tabletSrc} media='(min-width: 48rem)' />
-                    <img className={`grid_item__image ${!toggle && 'added_item'}`} src={mobileSrc} alt={alt} />
-
+                    <source srcSet={image.desktopSrc} media='(min-width: 90rem)' />
+                    <source srcSet={image.tabletSrc} media='(min-width: 48rem)' />
+                    <img className={`grid_item__image ${!toggle && 'added_item'}`} src={image.mobileSrc} alt={image.alt} />
                     {toggle ? <ButtonAddToCart onClick={() => (resetCount(), setToggle(!toggle))} /> :
                         <ButtonCounter increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} count={count} />}
-
                 </picture>
             </div>
             <div className='grid_item__info'>
-                <span className='grid_item__name  text_preset_4'>{name}</span>
-                <h3 className='grid_item__description  text_preset_3'>{description}</h3>
-                <span className='grid_item__price  text_preset_3'>{price}</span>
+                <span className='grid_item__name  text_preset_4'>{dessert.name}</span>
+                <h3 className='grid_item__description  text_preset_3'>{dessert.description}</h3>
+                <span className='grid_item__price  text_preset_3'>{dessert.price}</span>
             </div>
         </div>
     )

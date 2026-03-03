@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 import './sass/main.scss';
 import './sass/base/_base.scss';
 
