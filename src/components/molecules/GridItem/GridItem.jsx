@@ -34,13 +34,17 @@ export default function GridItem({ image, dessert }) {
 
     const decreaseQuantity = () => {
         setCount(count => {
-            if (count <= MIN_COUNT + 1) setToggle(true);
+            if (count <= MIN_COUNT + 1) resetState();
             return count > MIN_COUNT ? count - 1 : count;
         });
     }
 
     function resetCount() {
         setCount(count => count = 1);
+    }
+
+    function resetState() {
+        setToggle(!toggle);
     }
 
     const addItem = () => {
@@ -59,7 +63,7 @@ export default function GridItem({ image, dessert }) {
                     <source srcSet={image.desktopSrc} media='(min-width: 90rem)' />
                     <source srcSet={image.tabletSrc} media='(min-width: 48rem)' />
                     <img className={`grid_item__image ${!toggle && 'added_item'}`} src={image.mobileSrc} alt={image.alt} />
-                    {toggle ? <ButtonAddToCart onClick={() => (resetCount(), addItem(), setToggle(!toggle))} /> :
+                    {toggle ? <ButtonAddToCart onClick={() => (resetCount(), addItem(), resetState())} /> :
                         <ButtonCounter increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} count={count} />}
                 </picture>
             </div>
