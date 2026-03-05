@@ -22,11 +22,10 @@ export default function GridItem({ image, dessert }) {
 
         setCount(count => {
             const updatedCount = count < MAX_COUNT ? count + 1 : count;
-            setDessertItems(items => items.map(item =>
-                item.name === dessert.name
-                    ? { ...item, count: newCount }
-                    : item
-            ));
+            setDessertItems(currentObj => ({
+                ...currentObj,
+                [dessert.name]: { description: dessert.description, price: dessert.price, count: updatedCount }
+            }));
             console.log(dessertItems); //delete
         })
 
