@@ -9,7 +9,7 @@ import ButtonCounter from '../../atoms/Button/ButtonCounter.jsx';
 
 export default function GridItem({ image, dessert }) {
     //global state
-    const {dessertItems, setDessertItems} = useContext(DessertContext);
+    const { dessertItems, setDessertItems } = useContext(DessertContext);
 
     //local state
     let [count, setCount] = useState(1);
@@ -19,7 +19,18 @@ export default function GridItem({ image, dessert }) {
     const MIN_COUNT = 0;
 
     const increaseQuantity = () => {
-        setCount(count => (count < MAX_COUNT ? count + 1 : count));
+
+        setCount(count => {
+            const updatedCount = count < MAX_COUNT ? count + 1 : count;
+            setDessertItems(items => items.map(item =>
+                item.name === dessert.name
+                    ? { ...item, count: newCount }
+                    : item
+            ));
+            console.log(dessertItems); //delete
+        })
+
+        return updatedCount;
     }
 
     const decreaseQuantity = () => {
@@ -34,8 +45,12 @@ export default function GridItem({ image, dessert }) {
     }
 
     const addItem = () => {
-        setDessertItems(item => [...item, { [dessert.name]: {description: dessert.description, price: dessert.price, count: count} } ]);
-        console.log(dessertItems);
+        setDessertItems(currentObj => {
+            return {
+                ...currentObj, [dessert.name]: { description: dessert.description, price: dessert.price, count: count }
+            }
+        }); // { Tiramisu: {description: ..., price: ..., count: ...}, }
+        console.log(dessertItems)
     }
 
     return (

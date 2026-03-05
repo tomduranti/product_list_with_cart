@@ -8,7 +8,7 @@ import Desserts from './components/organisms/Desserts/Desserts.jsx';
 import Cart from './components/atoms/Cart/Cart.jsx';
 
 export default function App() {
-  const [dessertItems, setDessertItems] = useState([]);
+  const [dessertItems, setDessertItems] = useState({});
 
   return (
     <main>
