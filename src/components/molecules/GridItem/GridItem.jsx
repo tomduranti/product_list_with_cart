@@ -19,41 +19,43 @@ export default function GridItem({ image, dessert }) {
     const MIN_COUNT = 0;
 
     const increaseQuantity = () => {
-
         setCount(count => {
-            const updatedCount = count < MAX_COUNT ? count + 1 : count;
-            setDessertItems(currentObj => ({
-                ...currentObj,
-                [dessert.name]: { description: dessert.description, price: dessert.price, count: updatedCount }
-            }));
+            //increases the count at each click
+            const newCount = count < MAX_COUNT ? count + 1 : count;
+            handleChangeDessertItems(newCount);
             console.log(dessertItems); //delete
+            return newCount;
         })
-
-        return updatedCount;
     }
 
     const decreaseQuantity = () => {
         setCount(count => {
-            if (count <= MIN_COUNT + 1) resetState();
-            return count > MIN_COUNT ? count - 1 : count;
+            const newCount = count > MIN_COUNT ? count - 1 : count;
+
+            if (newCount <= MIN_COUNT + 1) {
+                resetState();
+                delete dessertItems[dessert.name]; //if count is 0, delete dessert from list
+            }
+            handleChangeDessertItems(newCount);
+            console.log(dessertItems); //delete
+            return newCount;
         });
     }
 
     function resetCount() {
-        setCount(count => count = 1);
+        setCount(count => { return count = 1 });
     }
 
     function resetState() {
-        setToggle(!toggle);
+        return setToggle(!toggle);
     }
 
-    const addItem = () => {
+    function handleChangeDessertItems(updatedCount) {
+        //initialises the dessert object with all information and count = 1 
+        //{ Tiramisu: {description: ..., price: ..., count: ...}, ...}
         setDessertItems(currentObj => {
-            return {
-                ...currentObj, [dessert.name]: { description: dessert.description, price: dessert.price, count: count }
-            }
-        }); // { Tiramisu: {description: ..., price: ..., count: ...}, }
-        console.log(dessertItems)
+            return { ...currentObj, [dessert.name]: { description: dessert.description, price: dessert.price, count: updatedCount } }
+        });
     }
 
     return (
@@ -63,8 +65,10 @@ export default function GridItem({ image, dessert }) {
                     <source srcSet={image.desktopSrc} media='(min-width: 90rem)' />
                     <source srcSet={image.tabletSrc} media='(min-width: 48rem)' />
                     <img className={`grid_item__image ${!toggle && 'added_item'}`} src={image.mobileSrc} alt={image.alt} />
-                    {toggle ? <ButtonAddToCart onClick={() => (resetCount(), addItem(), resetState())} /> :
-                        <ButtonCounter increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} count={count} />}
+                    {toggle ?
+                        <ButtonAddToCart onClick={() => (handleChangeDessertItems(), resetState())} /> :
+                        <ButtonCounter increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} count={count} />
+                    }
                 </picture>
             </div>
             <div className='grid_item__info'>
