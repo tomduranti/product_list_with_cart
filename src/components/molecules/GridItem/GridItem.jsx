@@ -8,54 +8,12 @@ import ButtonAddToCart from '../../atoms/Button/ButtonAddToCart.jsx';
 import ButtonCounter from '../../atoms/Button/ButtonCounter.jsx';
 
 export default function GridItem({ image, dessert }) {
-    //global state
-    const { dessertItems, setDessertItems } = useContext(DessertContext);
 
     //local state
-    let [count, setCount] = useState(1);
-    const [toggle, setToggle] = useState(true);
+    let [count, setCount] = useState(0);
 
-    const MAX_COUNT = 99;
-    const MIN_COUNT = 0;
-
-    const increaseQuantity = () => {
-        setCount(count => {
-            //increases the count at each click
-            const newCount = count < MAX_COUNT ? count + 1 : count;
-            handleChangeDessertItems(newCount);
-            console.log(dessertItems); //delete
-            return newCount;
-        })
-    }
-
-    const decreaseQuantity = () => {
-        setCount(count => {
-            const newCount = count > MIN_COUNT ? count - 1 : count;
-
-            if (newCount <= MIN_COUNT + 1) {
-                resetState();
-                delete dessertItems[dessert.name]; //if count is 0, delete dessert from list
-            }
-            handleChangeDessertItems(newCount);
-            console.log(dessertItems); //delete
-            return newCount;
-        });
-    }
-
-    function resetCount() {
-        setCount(count => { return count = 1 });
-    }
-
-    function resetState() {
-        return setToggle(!toggle);
-    }
-
-    function handleChangeDessertItems(updatedCount) {
-        //initialises the dessert object with all information and count = 1 
-        //{ Tiramisu: {description: ..., price: ..., count: ...}, ...}
-        setDessertItems(currentObj => {
-            return { ...currentObj, [dessert.name]: { description: dessert.description, price: dessert.price, count: updatedCount } }
-        });
+    function addCount() { //change the name
+        return setCount(count => count + 1);
     }
 
     return (
@@ -64,11 +22,9 @@ export default function GridItem({ image, dessert }) {
                 <picture className="grid_item__picture">
                     <source srcSet={image.desktopSrc} media='(min-width: 90rem)' />
                     <source srcSet={image.tabletSrc} media='(min-width: 48rem)' />
-                    <img className={`grid_item__image ${!toggle && 'added_item'}`} src={image.mobileSrc} alt={image.alt} />
-                    {toggle ?
-                        <ButtonAddToCart onClick={() => (handleChangeDessertItems(), resetState())} /> :
-                        <ButtonCounter increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} count={count} />
-                    }
+                    <img className={`grid_item__image ${Boolean(count) && 'added_item'}`} src={image.mobileSrc} alt={image.alt} />
+                    {!Boolean(count) && <ButtonAddToCart onClick={() => (addCount())} />}
+                    {Boolean(count) && <ButtonCounter count={count} setCount={setCount} />}
                 </picture>
             </div>
             <div className='grid_item__info'>
