@@ -40,12 +40,12 @@ export const gridItem = {
             desktopSrc: waffleDesktop,
             tabletSrc: waffleTablet,
             mobileSrc: waffleMobile,
-            alt: "waffle dessert",
+            alt: 'waffle dessert',
         },
         dessert: {
-            name: "Waffle",
-            description: "Waffle with Berries",
-            price: "$6.50",
+            name: 'Waffle',
+            description: 'Waffle with Berries',
+            price: '6.50',
         }
     },
     cremeBrulee: {
@@ -53,12 +53,12 @@ export const gridItem = {
             desktopSrc: cremeBruleeDesktop,
             tabletSrc: cremeBruleeTablet,
             mobileSrc: cremeBruleeMobile,
-            alt: "crème brûlée dessert",
+            alt: 'crème brûlée dessert',
         },
         dessert: {
-            name: "Crème Brûlée",
-            description: "Vanilla Bean Crème Brûlée",
-            price: "$7.00",
+            name: 'Crème Brûlée',
+            description: 'Vanilla Bean Crème Brûlée',
+            price: '7.00',
         }
     },
     macaron: {
@@ -66,12 +66,12 @@ export const gridItem = {
             desktopSrc: macaronDesktop,
             tabletSrc: macaronTablet,
             mobileSrc: macaronMobile,
-            alt: "macaron dessert",
+            alt: 'macaron dessert',
         },
         dessert: {
-            name: "Macaron",
-            description: "Macaron Mix of Five",
-            price: "$8.00",
+            name: 'Macaron',
+            description: 'Macaron Mix of Five',
+            price: '8.00',
         }
     },
     tiramisu: {
@@ -79,12 +79,12 @@ export const gridItem = {
             desktopSrc: tiramisuDesktop,
             tabletSrc: tiramisuTablet,
             mobileSrc: tiramisuMobile,
-            alt: "tiramisu dessert",
+            alt: 'tiramisu dessert',
         },
         dessert: {
-            name: "Tiramisu",
-            description: "Classic Tiramisu",
-            price: "$5.50",
+            name: 'Tiramisu',
+            description: 'Classic Tiramisu',
+            price: '5.50',
         }
     },
     baklava: {
@@ -92,12 +92,12 @@ export const gridItem = {
             desktopSrc: baklavaDesktop,
             tabletSrc: baklavaTablet,
             mobileSrc: baklavaMobile,
-            alt: "baklava dessert",
+            alt: 'baklava dessert',
         },
         dessert: {
-            name: "Baklava",
-            description: "Pistachio Baklava",
-            price: "$4.00",
+            name: 'Baklava',
+            description: 'Pistachio Baklava',
+            price: '4.00',
         }
     },
     lemonMeringue: {
@@ -105,12 +105,12 @@ export const gridItem = {
             desktopSrc: lemonMeringueDesktop,
             tabletSrc: lemonMeringueTablet,
             mobileSrc: lemonMeringueMobile,
-            alt: "lemon meringue dessert",
+            alt: 'lemon meringue dessert',
         },
         dessert: {
-            name: "Pie",
-            description: "Lemon Meringue Pie",
-            price: "$5.00",
+            name: 'Pie',
+            description: 'Lemon Meringue Pie',
+            price: '5.00',
         }
     },
     velvetCake: {
@@ -118,12 +118,12 @@ export const gridItem = {
             desktopSrc: velvetCakeDesktop,
             tabletSrc: velvetCakeTablet,
             mobileSrc: velvetCakeMobile,
-            alt: "velvet cake dessert",
+            alt: 'velvet cake dessert',
         },
         dessert: {
-            name: "Cake",
-            description: "Red Velvet Cake",
-            price: "$4.50",
+            name: 'Cake',
+            description: 'Red Velvet Cake',
+            price: '4.50',
         }
     },
     brownie: {
@@ -131,12 +131,12 @@ export const gridItem = {
             desktopSrc: brownieDesktop,
             tabletSrc: brownieTablet,
             mobileSrc: brownieMobile,
-            alt: "brownie dessert",
+            alt: 'brownie dessert',
         },
         dessert: {
-            name: "Brownie",
-            description: "Salted Caramel Brownie",
-            price: "$5.50",
+            name: 'Brownie',
+            description: 'Salted Caramel Brownie',
+            price: '5.50',
         }
     },
     pannaCotta: {
@@ -144,12 +144,12 @@ export const gridItem = {
             desktopSrc: pannaCottaDesktop,
             tabletSrc: pannaCottaTablet,
             mobileSrc: pannaCottaMobile,
-            alt: "panna cotta dessert",
+            alt: 'panna cotta dessert',
         },
         dessert: {
-            name: "Panna Cotta",
-            description: "Vanilla Panna Cotta",
-            price: "$6.50",
+            name: 'Panna Cotta',
+            description: 'Vanilla Panna Cotta',
+            price: '6.50',
         }
     }
 };

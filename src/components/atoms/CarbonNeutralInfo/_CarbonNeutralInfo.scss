@@ -6,8 +6,10 @@
     border-radius: $radius_mild_pill;
 
     padding-block: $padding_block_controls_md;
+    margin-block-end: $margin_blockend_components_sm;
 
     background-color: $primary_background_color_rose;
+
 
     &__container {
         @extend %flex_center;

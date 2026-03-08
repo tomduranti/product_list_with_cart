@@ -10,7 +10,6 @@ import ButtonCounter from '../../atoms/Button/ButtonCounter.jsx';
 export default function GridItem({ image, dessert }) {
     const [dessertItems, setDessertItems] = useContext(DessertContext);
     let [count, setCount] = useState(0);
-    const [isPositive, setIsPositive] = useState(true);
 
     function initCount() {
         const initCount = count + 1;
@@ -43,9 +42,9 @@ export default function GridItem({ image, dessert }) {
     }
 
     return (
-        <div className="grid_item">
-            <div className="grid_item__cta_image">
-                <picture className="grid_item__picture">
+        <div className='grid_item'>
+            <div className='grid_item__cta_image'>
+                <picture className='grid_item__picture'>
                     <source srcSet={image.desktopSrc} media='(min-width: 90rem)' />
                     <source srcSet={image.tabletSrc} media='(min-width: 48rem)' />
                     <img className={`grid_item__image ${Boolean(count) && 'added_item'}`} src={image.mobileSrc} alt={image.alt} />
