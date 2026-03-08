@@ -10,7 +10,6 @@ import ButtonCounter from '../../atoms/Button/ButtonCounter.jsx';
 export default function GridItem({ image, dessert }) {
     const [dessertItems, setDessertItems] = useContext(DessertContext);
     let [count, setCount] = useState(0);
-    const [isPositive, setIsPositive] = useState(true);
 
     function initCount() {
         const initCount = count + 1;
