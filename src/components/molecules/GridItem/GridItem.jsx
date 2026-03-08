@@ -10,9 +10,12 @@ import ButtonCounter from '../../atoms/Button/ButtonCounter.jsx';
 export default function GridItem({ image, dessert }) {
     const [dessertItems, setDessertItems] = useContext(DessertContext);
     let [count, setCount] = useState(0);
+    const [isPositive, setIsPositive] = useState(true);
 
-    function addCount() {
-        return setCount(count => count + 1);
+    function initCount() {
+        const initCount = count + 1;
+        setCount(initCount);
+        initGridObject(initCount);
     }
 
     function initGridObject(initialCount) {
@@ -23,26 +26,21 @@ export default function GridItem({ image, dessert }) {
 
     function updateGridObject(updatedCount) {
         setDessertItems(arr => {
-
+            //if count is 0, delete that item from the array
             if (updatedCount === 0) return arr.filter(obj => obj.description !== dessert.description);
 
+            //if count > 1, update that object with the latest count
             return (arr.map(obj => {
                 return (obj.description === dessert.description) ? ({ ...obj, count: updatedCount }) : obj;
             }))
         })
     }
 
-    const decreaseCount = () => {
-        const newCount = count - 1;
-        setCount(newCount);
-        updateGridObject(newCount);
-    };
-
-    const increaseCount = () => {
-        const newCount = count + 1;
-        setCount(newCount);
-        updateGridObject(newCount);
-    };
+    function counter(polarity) {
+        const newCount = polarity ? count + 1 : count - 1;
+        setCount(newCount); //updates the local state
+        updateGridObject(newCount); //updates the array
+    }
 
     return (
         <div className="grid_item">
@@ -51,8 +49,8 @@ export default function GridItem({ image, dessert }) {
                     <source srcSet={image.desktopSrc} media='(min-width: 90rem)' />
                     <source srcSet={image.tabletSrc} media='(min-width: 48rem)' />
                     <img className={`grid_item__image ${Boolean(count) && 'added_item'}`} src={image.mobileSrc} alt={image.alt} />
-                    {!Boolean(count) && <ButtonAddToCart onClick={() => (addCount(), initGridObject(1))} />}
-                    {Boolean(count) && <ButtonCounter count={count} increaseCount={increaseCount} decreaseCount={decreaseCount} />}
+                    {!Boolean(count) && <ButtonAddToCart onClick={() => initCount()} />}
+                    {Boolean(count) && <ButtonCounter count={count} onIncrease={() => counter(true)} onDecrease={() => counter(false)} />}
                 </picture>
             </div>
             <div className='grid_item__info'>
