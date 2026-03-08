@@ -8,6 +8,7 @@ import separator from '../../../assets/icon/icon_separator.svg';
 import removeItem from '../../../assets/icon/icon_remove_item.svg';
 import CarbonNeutralInfo from '../CarbonNeutralInfo/CarbonNeutralInfo.jsx';
 import ButtonOrder from '../Button/ButtonOrder.jsx';
+import ButtonDelete from '../Button/ButtonDelete.jsx';
 
 //TODO: move Cart.jsx to molecules, create the atoms ListItem.jsx and ButtonDelete.jsx
 export default function Cart() {
@@ -32,8 +33,7 @@ export default function Cart() {
                         <span className='list_items__total_price'>${(dessertItem.price * dessertItem.count).toFixed(2)}</span>
                     </div>
                 </div>
-                
-                <button className='list_items__button' type='button'><img src={removeItem} /></button>
+                <ButtonDelete />
             </div>
 
             <div className='separator'>
