@@ -17,6 +17,13 @@ export default function Cart() {
     const totalCount = [...dessertItems].reduce((accumulator, currentValue) => accumulator + currentValue.count, 0);
     let totalPrice = 0;
 
+    function deleteGridObject(itemToDelete) {
+        //removes the object from dessertItems, yet does not reset count
+        setDessertItems(arr => {
+            return arr.filter(obj => obj.description !== itemToDelete);
+        })
+    }
+
     const listItems = dessertItems.map(dessertItem => {
 
         totalPrice += (dessertItem.price * dessertItem.count);
@@ -33,7 +40,7 @@ export default function Cart() {
                         <span className='list_items__total_price'>${(dessertItem.price * dessertItem.count).toFixed(2)}</span>
                     </div>
                 </div>
-                <ButtonDelete />
+                <ButtonDelete onClick={() => deleteGridObject(dessertItem.description)} />
             </div>
 
             <div className='separator'>

@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react';
 import { DessertContext } from '../../../context/context.js';
 
 import '../../../sass/abstract/_utils.scss';
@@ -10,6 +10,14 @@ import ButtonCounter from '../../atoms/Button/ButtonCounter.jsx';
 export default function GridItem({ image, dessert }) {
     const [dessertItems, setDessertItems] = useContext(DessertContext);
     let [count, setCount] = useState(0);
+
+    useEffect(() => {
+        //this effect is triggered by ButtonDelete which deletes the object from dessertItems
+        //every GridItem then checks whether its object exists in dessertItems: if it doesn't, its count is reset to 0
+        const isFound = dessertItems.some(obj => obj.description === dessert.description);
+        if (!isFound) return setCount(0);
+    }, [dessertItems])
+
 
     function setGridObject(updatedCount) {
         setDessertItems(arr => {
