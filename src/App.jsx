@@ -6,6 +6,7 @@ import './sass/base/_base.scss';
 
 import Desserts from './components/organisms/Desserts/Desserts.jsx';
 import Cart from './components/molecules/Cart/Cart.jsx';
+import Modal from './components/molecules/Modal/Modal.jsx';
 
 export default function App() {
   const [dessertItems, setDessertItems] = useState([]);
@@ -18,6 +19,7 @@ export default function App() {
             <Desserts />
             <Cart />
           </div>
+          <Modal />
         </div>
       </DessertContext.Provider>
     </main>
