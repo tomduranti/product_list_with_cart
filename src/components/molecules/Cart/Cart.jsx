@@ -8,8 +8,8 @@ import separator from '../../../assets/icon/icon_separator.svg';
 import CarbonNeutralInfo from '../../atoms/CarbonNeutralInfo/CarbonNeutralInfo.jsx';
 import ButtonOrder from '../../atoms/Button/ButtonOrder.jsx';
 import ButtonDelete from '../../atoms/Button/ButtonDelete.jsx';
+import TotalOrder from '../../atoms/TotalOrder/TotalOrder.jsx';
 
-//TODO: move Cart.jsx to molecules, create the atoms ListItem.jsx and ButtonDelete.jsx
 export default function Cart() {
     const [dessertItems, setDessertItems] = useContext(DessertContext);
 
@@ -27,7 +27,7 @@ export default function Cart() {
 
         totalPrice += (dessertItem.price * dessertItem.count);
 
-        return (<li className='list_items__item'>
+        return (<div className='list_items__item'>
             <div className="list_items__tab">
                 <div className="list_items__info">
                     <div className='list_items__description  text_preset_4--bold'>
@@ -45,8 +45,8 @@ export default function Cart() {
             <div className='separator'>
                 <img src={separator} />
             </div>
-        </li>)
-        }
+        </div>)
+    }
     )
 
     return (
@@ -56,11 +56,8 @@ export default function Cart() {
                 {totalCount ?
                     (<>
                         <ul className='list_items'>
-                            {listItems}
-                            <li className='list_items__total_order'>
-                                <span className='text_preset_4'>order total</span>
-                                <span className='text_preset_2'>${totalPrice.toFixed(2)}</span>
-                            </li>
+                            <li>{listItems}</li>
+                            <li><TotalOrder totalPrice={totalPrice} /></li>
                         </ul>
                         <CarbonNeutralInfo />
                         <ButtonOrder text={'confirm order'} />

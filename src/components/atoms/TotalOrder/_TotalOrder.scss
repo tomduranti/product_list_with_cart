@@ -1,0 +1,11 @@
+@use '../../../sass/abstract/variables' as *;
+
+.total_order {
+    display: flex;
+    justify-content: space-between;
+
+    margin-block-end: $margin_blockend_components_sm;
+
+    text-transform: capitalize;
+    color: $primary_text_rose--900;
+}
