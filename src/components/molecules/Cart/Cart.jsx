@@ -1,14 +1,14 @@
-import { useContext } from 'react'
+import { useContext } from 'react';
 import { DessertContext } from '../../../context/context.js';
 
 import './_Cart.scss';
 
 import emptyCartImage from '../../../assets/icon/illustration_empty_cart.svg';
-import separator from '../../../assets/icon/icon_separator.svg';
+
 import CarbonNeutralInfo from '../../atoms/CarbonNeutralInfo/CarbonNeutralInfo.jsx';
 import ButtonOrder from '../../atoms/Button/ButtonOrder.jsx';
-import ButtonDelete from '../../atoms/Button/ButtonDelete.jsx';
 import TotalOrder from '../../atoms/TotalOrder/TotalOrder.jsx';
+import ListItem from '../../atoms/ListItem/ListItem.jsx';
 
 export default function Cart() {
     const [dessertItems, setDessertItems] = useContext(DessertContext);
@@ -24,28 +24,8 @@ export default function Cart() {
     }
 
     const listItems = dessertItems.map(dessertItem => {
-
         totalPrice += (dessertItem.price * dessertItem.count);
-
-        return (<div className='list_items__item'>
-            <div className="list_items__tab">
-                <div className="list_items__info">
-                    <div className='list_items__description  text_preset_4--bold'>
-                        {dessertItem.description}
-                    </div>
-                    <div className='list_items__quantity_and_price  text_preset_4--bold'>
-                        <span className='list_items__count'>{dessertItem.count}x</span>
-                        <span className='list_items__price  text_preset_4'>@ ${dessertItem.price}</span>
-                        <span className='list_items__total_price'>${(dessertItem.price * dessertItem.count).toFixed(2)}</span>
-                    </div>
-                </div>
-                <ButtonDelete onClick={() => deleteGridObject(dessertItem.description)} />
-            </div>
-
-            <div className='separator'>
-                <img src={separator} />
-            </div>
-        </div>)
+        return <ListItem item={dessertItem}  deleteGridObject={deleteGridObject} />
     }
     )
 

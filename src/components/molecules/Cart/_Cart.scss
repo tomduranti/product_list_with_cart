@@ -24,52 +24,6 @@
     }
 }
 
-.list_items {
-    display: flex;
-    flex-direction: column;
-    inline-size: 100%;
-
-    &__description {
-        color: $primary_text_rose--900;
-        
-        margin-block-end: $margin_blockend_components_xs;
-    }
-
-
-    &__quantity_and_price {
-        display: flex;
-        align-items: center;
-        gap: $gap_block_controls_sm;
-    }
-
-
-    &__count {
-        inline-size: $inlinesize_controls_xs; //magic number to follow design
-
-        color: $primary_text_red;
-    }
-
-
-    &__price {
-        color: $primary_text_rose--500;
-    }
-
-
-    &__total_price {
-        color: $primary_text_rose--500;
-    }
-
-
-    &__tab {
-        display: flex;
-        justify-content: space-between;
-    }
-}
-
-.separator {
-    margin-block: $margin_block_components_xs;
-}
-
 .placeholder {
     display: flex;
     flex-direction: column;
