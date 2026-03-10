@@ -5,10 +5,9 @@ import './_Cart.scss';
 
 import emptyCartImage from '../../../assets/icon/illustration_empty_cart.svg';
 import separator from '../../../assets/icon/icon_separator.svg';
-import removeItem from '../../../assets/icon/icon_remove_item.svg';
-import CarbonNeutralInfo from '../CarbonNeutralInfo/CarbonNeutralInfo.jsx';
-import ButtonOrder from '../Button/ButtonOrder.jsx';
-import ButtonDelete from '../Button/ButtonDelete.jsx';
+import CarbonNeutralInfo from '../../atoms/CarbonNeutralInfo/CarbonNeutralInfo.jsx';
+import ButtonOrder from '../../atoms/Button/ButtonOrder.jsx';
+import ButtonDelete from '../../atoms/Button/ButtonDelete.jsx';
 
 //TODO: move Cart.jsx to molecules, create the atoms ListItem.jsx and ButtonDelete.jsx
 export default function Cart() {
@@ -47,7 +46,7 @@ export default function Cart() {
                 <img src={separator} />
             </div>
         </li>)
-    }
+        }
     )
 
     return (
