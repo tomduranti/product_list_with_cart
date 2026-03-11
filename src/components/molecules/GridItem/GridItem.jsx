@@ -24,7 +24,7 @@ export default function GridItem({ image, dessert }) {
             const isFound = arr.some(obj => obj.description === dessert.description);
 
             //if the object doesn't exist yet in array, create it
-            if (!isFound) return [...arr, { description: dessert.description, price: dessert.price, count: updatedCount, thumnail: image.thumbnail }];
+            if (!isFound) return [...arr, { description: dessert.description, price: dessert.price, count: updatedCount, thumbnail: image.thumbnail }];
 
             //if the object exists and its count is 0, delete that item from the array
             if (updatedCount === 0) return arr.filter(obj => obj.description !== dessert.description);

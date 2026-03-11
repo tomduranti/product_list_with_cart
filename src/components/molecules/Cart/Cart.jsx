@@ -25,7 +25,7 @@ export default function Cart() {
 
     const listItems = dessertItems.map(dessertItem => {
         totalPrice += (dessertItem.price * dessertItem.count);
-        return <ListItem item={dessertItem}  deleteGridObject={deleteGridObject} />
+        return <li className='list_item__border_separator'><ListItem item={dessertItem} deleteGridObject={deleteGridObject} /></li>
     }
     )
 
@@ -34,14 +34,14 @@ export default function Cart() {
             <div className='cart__container'>
                 <h2 className='cart__heading  text_preset_2'>your cart ({totalCount})</h2>
                 {totalCount ?
-                    (<>
-                        <ul className='list_items'>
-                            <li>{listItems}</li>
+                    (<ul>
+                        <li><ul className='list_items'>
+                            {listItems}
                             <li><TotalOrder totalPrice={totalPrice} /></li>
-                        </ul>
-                        <CarbonNeutralInfo />
-                        <ButtonOrder text={'confirm order'} />
-                    </>) :
+                        </ul></li>
+                        <li><CarbonNeutralInfo /></li>
+                        <li><ButtonOrder text={'confirm order'} /></li>
+                    </ul>) :
                     (<div className='placeholder'>
                         <img className='placeholder__image' src={emptyCartImage} alt='empty cart image' />
                         <span className='placeholder__text  text_preset_4--bold'>Your added items will appear here</span>

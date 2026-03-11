@@ -4,7 +4,6 @@ import { DessertContext } from '../../../context/context.js';
 import './_Modal.scss';
 
 import OrderConfirmed from '../../../assets/icon/icon_order_confirmed.svg';
-import ListItem from '../../atoms/ListItem/ListItem.jsx';
 import TotalOrder from '../../atoms/TotalOrder/TotalOrder.jsx';
 import ButtonOrder from '../../atoms/Button/ButtonOrder.jsx';
 
@@ -15,10 +14,27 @@ export default function Modal() {
     const listItems = dessertItems.map(dessertItem => {
         totalPrice += (dessertItem.price * dessertItem.count);
         return (
-            <>
-                <img className='modal__thumbnail' src={dessertItem.thumbnail} alt='' />
-                <ListItem className='modal__list_confirmation_items' item={dessertItem} />
-            </>
+            <li className='list_item__border_separator'>
+                <div className='list_item__item'>
+                    <div className="list_item__tab">
+                        <div className="list_item__thumbnail_and_info">
+                            <img className='modal__thumbnail' src={dessertItem.thumbnail} alt='' />
+                            <div className="list_item__info">
+                                <div className='list_item__description  text_preset_4--bold'>
+                                    {dessertItem.description}
+                                </div>
+                                <div className='list_item__quantity_and_price  text_preset_4--bold'>
+                                    <span className='list_item__count'>{dessertItem.count}x</span>
+                                    <span className='list_item__price  text_preset_4'>@ ${dessertItem.price}</span>
+                                </div>
+
+                            </div>
+                            
+                        </div>
+                        <span className='list_item__total_price list_item__total_price--modal  text_preset_3'>${(dessertItem.price * dessertItem.count).toFixed(2)}</span>
+                    </div>
+                </div>
+            </li>
         )
     }
     )
@@ -33,7 +49,7 @@ export default function Modal() {
                 </div>
                 <div className='modal__confirmed_items'>
                     <ul className='modal__list_confirmation_items'>
-                        <li>{listItems}</li>
+                        {listItems}
                         <li><TotalOrder totalPrice={totalPrice} /></li>
                     </ul>
                 </div>

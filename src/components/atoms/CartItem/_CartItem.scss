@@ -1,34 +1,14 @@
 @use '../../../sass/abstract/variables' as *;
+@use '../../../sass/abstract/mixins' as *;
 
-.list_item {
+.cart_item {
     display: flex;
     flex-direction: column;
     inline-size: 100%;
 
-    &__border_separator {
-
-        border-bottom: 1px solid $primary_border_color_rose--100;
-
-        margin-block-end: $margin_blockend_components_xs2;
-
-        &:last-child {
-            margin-block-end: $margin_blockend_components_sm;
-        }
-    }
-    
-
-    &__item {
-        margin-block-end: $margin_blockend_components_xs2;
-
-        &:last-child {
-            margin-block-end: $margin_blockend_components_sm;
-        }
-    }
-
-
     &__description {
         color: $primary_text_rose--900;
-
+        
         margin-block-end: $margin_blockend_components_xs;
     }
 
@@ -61,15 +41,8 @@
         display: flex;
         justify-content: space-between;
     }
+}
 
-    //the following classes are in Modal.jsx
-    &__thumbnail_and_info {
-        display: flex;
-        gap: $gap_inline_controls_md;
-    }
-
-
-    &__total_price--modal {
-        color: $primary_text_rose--900;
-    }
+.separator {
+    margin-block: $margin_block_components_xs;
 }

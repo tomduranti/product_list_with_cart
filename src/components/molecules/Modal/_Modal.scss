@@ -1,0 +1,57 @@
+@use '../../../sass/abstract/variables' as *;
+@use '../../../sass/abstract/mixins' as *;
+
+.modal {
+
+    &__container {
+        inline-size: 100%;
+
+        padding-block-start: $padding_block_layout_md;
+        padding-block-end: $padding_block_layout_sm;
+        padding-inline: $padding_inline_controls_md;
+
+        background-color: $white;
+
+        border-radius: $radius_avg_pill;
+    }
+
+
+    &__image {
+        margin-block-end: $margin_blockend_components_sm;
+    }
+
+
+    &__confirmed_items {
+        background-color: $primary_background_color_rose;
+
+        padding: $padding_controls_md;
+
+        border-radius: $radius_mild_pill;
+    }
+
+
+    &__confirmation_message {
+        margin-block-end: $margin_blockend_components_md;
+    }
+
+
+    &__confirmation_heading {
+        text-transform: capitalize;
+
+        max-inline-size: 10ch;
+
+        margin-block-end: $margin_blockend_components_xs;
+    }
+
+
+    &__confirmation_subheading {
+        color: $primary_text_rose--500;
+    }
+
+
+    &__thumbnail {
+        inline-size: 48px;
+        block-size: 48px;
+        border-radius: $radius_small_pill;
+    }
+}

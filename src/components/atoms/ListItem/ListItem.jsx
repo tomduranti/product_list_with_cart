@@ -3,7 +3,6 @@ import { DessertContext } from '../../../context/context.js';
 
 import './_ListItem.scss';
 
-import separator from '../../../assets/icon/icon_separator.svg';
 import ButtonDelete from '../../atoms/Button/ButtonDelete.jsx';
 
 export default function ListItem({ item, deleteGridObject}) {
@@ -25,10 +24,6 @@ export default function ListItem({ item, deleteGridObject}) {
                     </div>
                     <ButtonDelete onClick={() => deleteGridObject(item.description)} />
                 </div>
-            </div>
-
-            <div className='separator'>
-                <img src={separator} alt='end of the item selection'/>
             </div>
         </>
     )
