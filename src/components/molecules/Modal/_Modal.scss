@@ -3,7 +3,20 @@
 
 .modal {
 
+	position: fixed;
+	inset: 0;
+
+	background-color: hsl(0deg, 0%, 0%, .5);
+
+    overflow-y: auto; //allows modal__container to be scrolled if it's too long
+
     &__container {
+
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
         inline-size: 100%;
 
         padding-block-start: $padding_block_layout_md;
@@ -48,6 +61,7 @@
 
     &__confirmation_subheading {
         color: $primary_text_rose--500;
+        line-height: 1; //to follow design's height
     }
 
 
