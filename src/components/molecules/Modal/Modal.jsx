@@ -20,7 +20,7 @@ export default function Modal() {
                         <div className="list_item__thumbnail_and_info">
                             <img className='modal__thumbnail' src={dessertItem.thumbnail} alt='' />
                             <div className="list_item__info">
-                                <div className='list_item__description  text_preset_4--bold'>
+                                <div className='list_item__description list_item__description--modal  text_preset_4--bold'>
                                     {dessertItem.description}
                                 </div>
                                 <div className='list_item__quantity_and_price  text_preset_4--bold'>
