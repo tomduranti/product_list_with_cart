@@ -5,24 +5,18 @@
     flex-direction: column;
     inline-size: 100%;
 
-    &__border_separator {
+    &::after {
+        content: '';
+
+        display: block;
 
         border-bottom: 1px solid $primary_border_color_rose--100;
 
-        margin-block-end: $margin_blockend_components_xs2;
-
-        &:last-child {
-            margin-block-end: $margin_blockend_components_sm;
-        }
+        margin-block: $margin_block_components_xs;
     }
-    
 
-    &__item {
-        margin-block-end: $margin_blockend_components_xs2;
-
-        &:last-child {
-            margin-block-end: $margin_blockend_components_sm;
-        }
+    &:nth-last-child(2)::after {
+        margin-block: $margin_block_components_sm;
     }
 
 
@@ -60,6 +54,7 @@
     &__tab {
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
 
     //the following classes are in Modal.jsx

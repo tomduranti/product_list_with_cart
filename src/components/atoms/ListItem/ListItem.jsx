@@ -5,7 +5,7 @@ import './_ListItem.scss';
 
 import ButtonDelete from '../../atoms/Button/ButtonDelete.jsx';
 
-export default function ListItem({ item, deleteGridObject}) {
+export default function ListItem({ item, deleteGridObject }) {
     const [dessertItems, setDessertItems] = useContext(DessertContext);
 
     return (

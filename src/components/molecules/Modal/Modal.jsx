@@ -14,7 +14,7 @@ export default function Modal() {
     const listItems = dessertItems.map(dessertItem => {
         totalPrice += (dessertItem.price * dessertItem.count);
         return (
-            <li className='list_item__border_separator'>
+            <li className='list_item'>
                 <div className='list_item__item'>
                     <div className="list_item__tab">
                         <div className="list_item__thumbnail_and_info">
@@ -27,9 +27,7 @@ export default function Modal() {
                                     <span className='list_item__count'>{dessertItem.count}x</span>
                                     <span className='list_item__price  text_preset_4'>@ ${dessertItem.price}</span>
                                 </div>
-
                             </div>
-                            
                         </div>
                         <span className='list_item__total_price list_item__total_price--modal  text_preset_3'>${(dessertItem.price * dessertItem.count).toFixed(2)}</span>
                     </div>

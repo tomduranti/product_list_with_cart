@@ -44,13 +44,3 @@
         color: $primary_text_rose--500;
     }
 }
-
-.border_separator {
-    border-bottom: 1px solid $primary_border_color_rose--100;
-
-    margin-block-end: $margin_blockend_components_xs2;
-
-    &:last-child {
-        margin-block-end: $margin_blockend_components_sm;
-    }
-}

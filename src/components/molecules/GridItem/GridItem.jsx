@@ -54,7 +54,7 @@ export default function GridItem({ image, dessert }) {
             <div className='grid_item__info'>
                 <span className='grid_item__name  text_preset_4'>{dessert.name}</span>
                 <h3 className='grid_item__description  text_preset_3'>{dessert.description}</h3>
-                <span className='grid_item__price  text_preset_3'>{dessert.price}</span>
+                <span className='grid_item__price  text_preset_3'>${dessert.price}</span>
             </div>
         </div>
     )
