@@ -24,7 +24,9 @@
     &__confirmed_items {
         background-color: $primary_background_color_rose;
 
-        padding: $padding_controls_md;
+        padding-block-start: $padding_block_controls_lg;
+        padding-inline: $padding_controls_md;
+        margin-block-end: $margin_blockend_components_md;
 
         border-radius: $radius_mild_pill;
     }

@@ -91,6 +91,7 @@ $padding_controls_sm: map.get($spacing, 12);
 $padding_controls_md: map.get($spacing, 24);
 $padding_block_controls_sm: map.get($spacing, 12);
 $padding_block_controls_md: map.get($spacing, 16);
+$padding_block_controls_lg: map.get($spacing, 24);
 $padding_inline_controls_sm: map.get($spacing, 12);
 $padding_inline_controls_md: map.get($spacing, 24);
 $padding_inline_controls_lg: calc(map.get($spacing, 24) + map.get($spacing, 4));

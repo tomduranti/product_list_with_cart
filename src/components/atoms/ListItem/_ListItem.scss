@@ -23,7 +23,17 @@
     &__description {
         color: $primary_text_rose--900;
 
+        inline-size: 9.56rem; //magic number to cut text at per design
+
         margin-block-end: $margin_blockend_components_xs;
+    }
+
+
+   div &__description  {
+        
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
 
 
