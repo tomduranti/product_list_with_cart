@@ -13,9 +13,8 @@
     &__container {
 
         position: absolute;
-        top: 55%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        bottom: 0;
+        left: 0;
 
         inline-size: 100%;
 
@@ -26,6 +25,9 @@
         background-color: $white;
 
         border-radius: $radius_avg_pill;
+
+        @include transition(transform, .3s, ease);
+        transform: translateY(100%);
     }
 
 
