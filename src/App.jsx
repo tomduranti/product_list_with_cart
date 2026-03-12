@@ -10,16 +10,28 @@ import Modal from './components/molecules/Modal/Modal.jsx';
 
 export default function App() {
   const [dessertItems, setDessertItems] = useState([]);
+  const [isActive, setIsActive] = useState(false);
+
+  const handleClick = () => {
+    setIsActive(!isActive);
+  }
+
+  const resetState = () => {
+    //empties the array
+    setDessertItems(arr => []);
+    //resets the modal
+    handleClick();
+  }
 
   return (
     <main>
-      <DessertContext.Provider value={[ dessertItems, setDessertItems ]}>
+      <DessertContext.Provider value={[dessertItems, setDessertItems]}>
         <div className='page'>
           <div className='page__container'>
             <Desserts />
-            <Cart />
+            <Cart handleClick={handleClick} />
           </div>
-          <Modal />
+          <Modal className={isActive ? 'display_block' : 'display_none'} resetState={resetState} />
         </div>
       </DessertContext.Provider>
     </main>

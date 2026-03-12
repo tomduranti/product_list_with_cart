@@ -10,7 +10,7 @@ import ButtonOrder from '../../atoms/Button/ButtonOrder.jsx';
 import TotalOrder from '../../atoms/TotalOrder/TotalOrder.jsx';
 import ListItem from '../../atoms/ListItem/ListItem.jsx';
 
-export default function Cart() {
+export default function Cart({ handleClick }) {
     const [dessertItems, setDessertItems] = useContext(DessertContext);
 
     const totalCount = [...dessertItems].reduce((accumulator, currentValue) => accumulator + currentValue.count, 0);
@@ -26,7 +26,7 @@ export default function Cart() {
     const listItems = dessertItems.map(dessertItem => {
         totalPrice += (dessertItem.price * dessertItem.count);
         return <li className='list_item'><ListItem item={dessertItem} deleteGridObject={deleteGridObject} /></li>
-    }
+        }
     )
 
     return (
@@ -34,14 +34,14 @@ export default function Cart() {
             <div className='cart__container'>
                 <h2 className='cart__heading  text_preset_2'>your cart ({totalCount})</h2>
                 {totalCount ?
-                    (<ul>
+                    (<>
                         <ul className='list_items'>
                             {listItems}
                             <li><TotalOrder totalPrice={totalPrice} /></li>
                         </ul>
                         <CarbonNeutralInfo />
-                        <ButtonOrder text={'confirm order'} />
-                    </ul>) :
+                        <ButtonOrder text={'confirm order'} onClick={handleClick} />
+                    </>) :
                     (<div className='placeholder'>
                         <img className='placeholder__image' src={emptyCartImage} alt='empty cart image' />
                         <span className='placeholder__text  text_preset_4--bold'>Your added items will appear here</span>

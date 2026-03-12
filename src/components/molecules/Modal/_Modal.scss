@@ -10,12 +10,12 @@
 
     overflow-y: auto; //allows modal__container to be scrolled if it's too long
 
+
     &__container {
 
         position: absolute;
-        top: 55%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        bottom: 0;
+        left: 0;
 
         inline-size: 100%;
 
@@ -26,6 +26,18 @@
         background-color: $white;
 
         border-radius: $radius_avg_pill;
+
+        @include respond_to(min, m_screen) {
+            max-inline-size: 688px;
+
+            padding-inline: $padding_block_layout_md;
+            padding-block-end: $padding_block_layout_md;
+
+            top: 50%;
+            left: 50%;
+            bottom: initial;
+            transform: translate(-50%, -50%);
+        }
     }
 
 
@@ -56,6 +68,10 @@
         max-inline-size: 10ch;
 
         margin-block-end: $margin_blockend_components_xs;
+
+        @include respond_to(min, m_screen) {
+            max-inline-size: 100%;
+        }
     }
 
 

@@ -7,7 +7,7 @@ import OrderConfirmed from '../../../assets/icon/icon_order_confirmed.svg';
 import TotalOrder from '../../atoms/TotalOrder/TotalOrder.jsx';
 import ButtonOrder from '../../atoms/Button/ButtonOrder.jsx';
 
-export default function Modal() {
+export default function Modal({ resetState, className }) {
     const [dessertItems, setDessertItems] = useContext(DessertContext);
     let totalPrice = 0;
 
@@ -38,7 +38,7 @@ export default function Modal() {
     )
 
     return (
-        <div className='modal'>
+        <div className={`modal ${className}`}>
             <div className='modal__container'>
                 <div className='modal__confirmation_message'>
                     <img className='modal__image' src={OrderConfirmed} alt='your order is confirmed!' />
@@ -51,7 +51,7 @@ export default function Modal() {
                         <li><TotalOrder totalPrice={totalPrice} /></li>
                     </ul>
                 </div>
-                <ButtonOrder text={'start new order'} />
+                <ButtonOrder text={'start new order'} onClick={resetState}/>
             </div>
         </div>
     )

@@ -16,6 +16,10 @@
     @include transition(outline, .05s, ease);
 }
 
-.display_none.display_none {
+.display_block {
+    display: block;
+}
+
+.display_none {
     display: none;
 }
