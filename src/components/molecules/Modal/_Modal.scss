@@ -3,10 +3,10 @@
 
 .modal {
 
-	position: fixed;
-	inset: 0;
+    position: fixed;
+    inset: 0;
 
-	background-color: hsl(0deg, 0%, 0%, .5);
+    background-color: hsl(0deg, 0%, 0%, .5);
 
     overflow-y: auto; //allows modal__container to be scrolled if it's too long
 
@@ -27,8 +27,13 @@
 
         border-radius: $radius_avg_pill;
 
+        @include transition(transform, .3s, ease);
+
+        transform: translateY(100%);
+
+
         @include respond_to(min, m_screen) {
-            max-inline-size: 688px;
+            max-inline-size: $container_inline_layout_md;
 
             padding-inline: $padding_block_layout_md;
             padding-block-end: $padding_block_layout_md;
@@ -37,6 +42,10 @@
             left: 50%;
             bottom: initial;
             transform: translate(-50%, -50%);
+        }
+
+        @include respond_to(min, l_screen) {
+            max-inline-size: $container_inline_layout_xs;
         }
     }
 

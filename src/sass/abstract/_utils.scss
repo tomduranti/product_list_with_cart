@@ -23,3 +23,7 @@
 .display_none {
     display: none;
 }
+
+.is_active.is_active {
+    transform: translateY(0);
+}
