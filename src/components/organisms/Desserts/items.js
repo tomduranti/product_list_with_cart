@@ -1,50 +1,50 @@
-import waffleMobile from '../../../assets/mobile/waffle_mobile.jpg';
-import waffleTablet from '../../../assets/tablet/waffle_tablet.jpg';
-import waffleDesktop from '../../../assets/desktop/waffle_desktop.jpg';
-import waffleThumbnail from '../../../assets/thumbnail/waffle_thumbnail.jpg';
+import waffleMobile from '/src/assets/mobile/waffle_mobile.jpg';
+import waffleTablet from '/src/assets/tablet/waffle_tablet.jpg';
+import waffleDesktop from '/src/assets/desktop/waffle_desktop.jpg';
+import waffleThumbnail from '/src/assets/thumbnail/waffle_thumbnail.jpg';
 
-import cremeBruleeMobile from '../../../assets/mobile/creme_brulee_mobile.jpg';
-import cremeBruleeTablet from '../../../assets/tablet/creme_brulee_tablet.jpg';
-import cremeBruleeDesktop from '../../../assets/desktop/creme_brulee_desktop.jpg';
-import cremeBruleeThumbnail from '../../../assets/thumbnail/creme_brulee_thumbnail.jpg';
+import cremeBruleeMobile from '/src/assets/mobile/creme_brulee_mobile.jpg';
+import cremeBruleeTablet from '/src/assets/tablet/creme_brulee_tablet.jpg';
+import cremeBruleeDesktop from '/src/assets/desktop/creme_brulee_desktop.jpg';
+import cremeBruleeThumbnail from '/src/assets/thumbnail/creme_brulee_thumbnail.jpg';
 
-import macaronMobile from '../../../assets/mobile/macaron_mobile.jpg';
-import macaronTablet from '../../../assets/tablet/macaron_tablet.jpg';
-import macaronDesktop from '../../../assets/desktop/macaron_desktop.jpg';
-import macaronThumbnail from '../../../assets/thumbnail/macaron_thumbnail.jpg';
+import macaronMobile from '/src/assets/mobile/macaron_mobile.jpg';
+import macaronTablet from '/src/assets/tablet/macaron_tablet.jpg';
+import macaronDesktop from '/src/assets/desktop/macaron_desktop.jpg';
+import macaronThumbnail from '/src/assets/thumbnail/macaron_thumbnail.jpg';
 
-import tiramisuMobile from '../../../assets/mobile/tiramisu_mobile.jpg';
-import tiramisuTablet from '../../../assets/tablet/tiramisu_tablet.jpg';
-import tiramisuDesktop from '../../../assets/desktop/tiramisu_desktop.jpg';
-import tiramisuThumbnail from '../../../assets/thumbnail/tiramisu_thumbnail.jpg';
+import tiramisuMobile from '/src/assets/mobile/tiramisu_mobile.jpg';
+import tiramisuTablet from '/src/assets/tablet/tiramisu_tablet.jpg';
+import tiramisuDesktop from '/src/assets/desktop/tiramisu_desktop.jpg';
+import tiramisuThumbnail from '/src/assets/thumbnail/tiramisu_thumbnail.jpg';
 
-import baklavaMobile from '../../../assets/mobile/baklava_mobile.jpg';
-import baklavaTablet from '../../../assets/tablet/baklava_tablet.jpg';
-import baklavaDesktop from '../../../assets/desktop/baklava_desktop.jpg';
-import baklavaThumbnail from '../../../assets/thumbnail/baklava_thumbnail.jpg';
+import baklavaMobile from '/src/assets/mobile/baklava_mobile.jpg';
+import baklavaTablet from '/src/assets/tablet/baklava_tablet.jpg';
+import baklavaDesktop from '/src/assets/desktop/baklava_desktop.jpg';
+import baklavaThumbnail from '/src/assets/thumbnail/baklava_thumbnail.jpg';
 
-import lemonMeringueMobile from '../../../assets/mobile/meringue_mobile.jpg';
-import lemonMeringueTablet from '../../../assets/tablet/meringue_tablet.jpg';
-import lemonMeringueDesktop from '../../../assets/desktop/meringue_desktop.jpg';
-import lemonMeringueThumbnail from '../../../assets/thumbnail/meringue_thumbnail.jpg';
+import lemonMeringueMobile from '/src/assets/mobile/meringue_mobile.jpg';
+import lemonMeringueTablet from '/src/assets/tablet/meringue_tablet.jpg';
+import lemonMeringueDesktop from '/src/assets/desktop/meringue_desktop.jpg';
+import lemonMeringueThumbnail from '/src/assets/thumbnail/meringue_thumbnail.jpg';
 
-import velvetCakeMobile from '../../../assets/mobile/velvet_cake_mobile.jpg';
-import velvetCakeTablet from '../../../assets/tablet/velvet_cake_tablet.jpg';
-import velvetCakeDesktop from '../../../assets/desktop/velvet_cake_desktop.jpg';
-import velvetCakeThumbnail from '../../../assets/thumbnail/velvet_cake_thumbnail.jpg';
+import velvetCakeMobile from '/src/assets/mobile/velvet_cake_mobile.jpg';
+import velvetCakeTablet from '/src/assets/tablet/velvet_cake_tablet.jpg';
+import velvetCakeDesktop from '/src/assets/desktop/velvet_cake_desktop.jpg';
+import velvetCakeThumbnail from '/src/assets/thumbnail/velvet_cake_thumbnail.jpg';
 
-import brownieMobile from '../../../assets/mobile/brownie_mobile.jpg';
-import brownieTablet from '../../../assets/tablet/brownie_tablet.jpg';
-import brownieDesktop from '../../../assets/desktop/brownie_desktop.jpg';
-import brownieThumbnail from '../../../assets/thumbnail/brownie_thumbnail.jpg';
+import brownieMobile from '/src/assets/mobile/brownie_mobile.jpg';
+import brownieTablet from '/src/assets/tablet/brownie_tablet.jpg';
+import brownieDesktop from '/src/assets/desktop/brownie_desktop.jpg';
+import brownieThumbnail from '/src/assets/thumbnail/brownie_thumbnail.jpg';
 
-import pannaCottaMobile from '../../../assets/mobile/panna_cotta_mobile.jpg';
-import pannaCottaTablet from '../../../assets/tablet/panna_cotta_tablet.jpg';
-import pannaCottaDesktop from '../../../assets/desktop/panna_cotta_desktop.jpg';
-import pannaCottaThumbnail from '../../../assets/thumbnail/panna_cotta_thumbnail.jpg';
+import pannaCottaMobile from '/src/assets/mobile/panna_cotta_mobile.jpg';
+import pannaCottaTablet from '/src/assets/tablet/panna_cotta_tablet.jpg';
+import pannaCottaDesktop from '/src/assets/desktop/panna_cotta_desktop.jpg';
+import pannaCottaThumbnail from '/src/assets/thumbnail/panna_cotta_thumbnail.jpg';
 
-export const gridItem = {
-    waffle: {
+export const items = [
+    {
         image: {
             desktopSrc: waffleDesktop,
             tabletSrc: waffleTablet,
@@ -58,7 +58,7 @@ export const gridItem = {
             price: '6.50',
         }
     },
-    cremeBrulee: {
+    {
         image: {
             desktopSrc: cremeBruleeDesktop,
             tabletSrc: cremeBruleeTablet,
@@ -72,7 +72,7 @@ export const gridItem = {
             price: '7.00',
         }
     },
-    macaron: {
+    {
         image: {
             desktopSrc: macaronDesktop,
             tabletSrc: macaronTablet,
@@ -86,7 +86,7 @@ export const gridItem = {
             price: '8.00',
         }
     },
-    tiramisu: {
+    {
         image: {
             desktopSrc: tiramisuDesktop,
             tabletSrc: tiramisuTablet,
@@ -100,7 +100,7 @@ export const gridItem = {
             price: '5.50',
         }
     },
-    baklava: {
+    {
         image: {
             desktopSrc: baklavaDesktop,
             tabletSrc: baklavaTablet,
@@ -114,7 +114,7 @@ export const gridItem = {
             price: '4.00',
         }
     },
-    lemonMeringue: {
+    {
         image: {
             desktopSrc: lemonMeringueDesktop,
             tabletSrc: lemonMeringueTablet,
@@ -128,7 +128,7 @@ export const gridItem = {
             price: '5.00',
         }
     },
-    velvetCake: {
+    {
         image: {
             desktopSrc: velvetCakeDesktop,
             tabletSrc: velvetCakeTablet,
@@ -142,7 +142,7 @@ export const gridItem = {
             price: '4.50',
         }
     },
-    brownie: {
+    {
         image: {
             desktopSrc: brownieDesktop,
             tabletSrc: brownieTablet,
@@ -156,7 +156,7 @@ export const gridItem = {
             price: '5.50',
         }
     },
-    pannaCotta: {
+    {
         image: {
             desktopSrc: pannaCottaDesktop,
             tabletSrc: pannaCottaTablet,
@@ -170,4 +170,4 @@ export const gridItem = {
             price: '6.50',
         }
     }
-};
+]

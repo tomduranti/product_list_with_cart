@@ -21,6 +21,7 @@
         }
     }
 
+
     &__text {
         line-height: normal; //just to reduce lh of container
     }
@@ -47,11 +48,13 @@
         }
     }
 
+
     &--bg_red {
         background-color: $secondary_bg_red;
 
         border-color: $secondary_border_color_red;
     }
+    
 
     &--abs_position {
         position: absolute;

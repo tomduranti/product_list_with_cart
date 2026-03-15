@@ -12,9 +12,11 @@
         align-self: flex-start;
      }
 
+     
     &__container {
         padding: $padding_controls_md;
     }
+
 
     &__heading {
         text-transform: capitalize;
@@ -32,10 +34,12 @@
     
     max-inline-size: 279px;
 
+
     &__image {
         margin-block: $margin_block_components_xs;
         margin-inline: auto;
     }
+
 
     &__text {
         margin-block-end: $margin_block_components_xs;

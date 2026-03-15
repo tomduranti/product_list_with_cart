@@ -8,6 +8,7 @@
    @include respond_to(min, l_screen) {
       margin-block-end: 0;
    }
+   
 
    &__heading {
       text-transform: capitalize;
