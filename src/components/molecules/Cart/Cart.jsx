@@ -14,7 +14,7 @@ export default function Cart({ handleClick }) {
     const [dessertItems, setDessertItems] = useContext(DessertContext);
 
     const totalCount = [...dessertItems].reduce((accumulator, currentValue) => accumulator + currentValue.count, 0);
-    let totalPrice = 0;
+    const totalPrice = [...dessertItems].reduce((accumulator, currentValue) => accumulator + (currentValue.price * currentValue.count), 0);
 
     function deleteGridItem(itemToDelete) {
         //removes the object from dessertItems, yet does not reset count
@@ -23,10 +23,8 @@ export default function Cart({ handleClick }) {
         })
     }
 
-    const listItems = dessertItems.map(dessertItem => {
-        totalPrice += (dessertItem.price * dessertItem.count);
-        return <li className='list_item'   key={dessertItem.id}><ListItem description={dessertItem.description} price={dessertItem.price} id={dessertItem.id} count={dessertItem.count}  deleteGridItem={deleteGridItem} /></li>
-    }
+    const listItems = dessertItems.map(dessertItem =>
+        <li className='list_item' key={dessertItem.id}><ListItem description={dessertItem.description} price={dessertItem.price} id={dessertItem.id} count={dessertItem.count} deleteGridItem={deleteGridItem} /></li>
     )
 
     return (

@@ -4,9 +4,9 @@ import GridItem from '../../molecules/GridItem/GridItem.jsx';
 import { items } from './items.js';
 
 export default function Desserts() {
-    const dessert = items.map(item => {
-        return <li key={item.id}><GridItem className='desserts__grid_item' image={item.image} description={item.description} price={item.price} id={item.id} /></li>
-    })
+    const dessert = items.map(item =>
+        <li key={item.id}><GridItem className='desserts__grid_item' image={item.image} description={item.description} price={item.price} id={item.id} /></li>
+    )
 
     return (
         <div className='desserts'>
