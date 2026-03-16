@@ -14,7 +14,7 @@ export default function Modal({ resetState, className }) {
     const listItems = dessertItems.map(dessertItem => {
         totalPrice += (dessertItem.price * dessertItem.count);
         return (
-            <li className='list_item'   key={dessertItem.id}>
+            <li className='list_item' key={dessertItem.id}>
                 <div className='list_item__item'>
                     <div className="list_item__tab">
                         <div className="list_item__thumbnail_and_info">
