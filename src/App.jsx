@@ -12,7 +12,7 @@ export default function App() {
   const [dessertItems, setDessertItems] = useState([]);
   const [isActive, setIsActive] = useState(false);
 
-  const handleClick = () => {
+  const toggleModal = () => {
     setIsActive(!isActive);
   }
 
@@ -22,7 +22,7 @@ export default function App() {
     //empties the array
     setDessertItems(arr => []);
     //resets the modal
-    handleClick();
+    toggleModal();
   }
 
   return (
@@ -31,7 +31,7 @@ export default function App() {
         <div className='page'>
           <div className='page__container'>
             <Desserts />
-            <Cart handleClick={handleClick} totalPrice={totalPrice} />
+            <Cart toggleModal={toggleModal} totalPrice={totalPrice} />
           </div>
           {isActive ? (<Modal resetState={resetState} totalPrice={totalPrice} isActive={isActive}/>) : null }
         </div>

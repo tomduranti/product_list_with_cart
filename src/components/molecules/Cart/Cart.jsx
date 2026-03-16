@@ -11,7 +11,7 @@ import ButtonDelete from '../../atoms/Button/ButtonDelete.jsx';
 import TotalOrder from '../../atoms/TotalOrder/TotalOrder.jsx';
 import ListItem from '../../atoms/ListItem/ListItem.jsx';
 
-export default function Cart({ handleClick, totalPrice }) {
+export default function Cart({ toggleModal, totalPrice }) {
     const [dessertItems, setDessertItems] = useContext(DessertContext);
 
     const totalCount = [...dessertItems].reduce((accumulator, currentValue) => accumulator + currentValue.count, 0);
@@ -24,7 +24,7 @@ export default function Cart({ handleClick, totalPrice }) {
     const listItems = dessertItems.map(dessertItem =>
         <li className='list_item' key={dessertItem.id}>
             <div className='list_item__item'>
-                <ListItem description={dessertItem.description} price={dessertItem.price} id={dessertItem.id} count={dessertItem.count} deleteGridItem={deleteGridItem} />
+                <ListItem description={dessertItem.description} price={dessertItem.price} id={dessertItem.id} count={dessertItem.count} />
                 <ButtonDelete onClick={() => deleteGridItem(dessertItem.id)} />
             </div>
         </li>
@@ -41,7 +41,7 @@ export default function Cart({ handleClick, totalPrice }) {
                             <li><TotalOrder totalPrice={totalPrice} /></li>
                         </ul>
                         <CarbonNeutralInfo />
-                        <ButtonOrder text={'confirm order'} onClick={handleClick} />
+                        <ButtonOrder text={'confirm order'} onClick={toggleModal} />
                     </>) :
                     (<div className='placeholder'>
                         <img className='placeholder__image' src={emptyCartImage} alt='empty cart image' />

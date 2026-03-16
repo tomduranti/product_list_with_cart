@@ -26,8 +26,8 @@ export default function GridItem({ image, name, description, price, id }) {
         })
     }
 
-    function counter(polarity) {
-        const newCount = polarity ? count + 1 : count - 1;
+    function updateCount(increment) {
+        const newCount = increment ? count + 1 : count - 1;
         setGridItem(newCount);
     }
 
@@ -38,8 +38,8 @@ export default function GridItem({ image, name, description, price, id }) {
                     <source srcSet={image.desktopSrc} media='(min-width: 90rem)' />
                     <source srcSet={image.tabletSrc} media='(min-width: 48rem)' />
                     <img className={`grid_item__image ${Boolean(count) && 'added_item'}`} src={image.mobileSrc} alt={image.alt} />
-                    {!Boolean(count) && <ButtonAddToCart onClick={() => counter(true)} />}
-                    {Boolean(count) && <ButtonCounter count={count} onIncrease={() => counter(true)} onDecrease={() => counter(false)} />}
+                    {!Boolean(count) && <ButtonAddToCart onClick={() => updateCount(true)} />}
+                    {Boolean(count) && <ButtonCounter count={count} increment={() => updateCount(true)} decrement={() => updateCount(false)} />}
                 </picture>
             </div>
             <div className='grid_item__info'>
