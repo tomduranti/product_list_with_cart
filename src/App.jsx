@@ -31,7 +31,7 @@ export default function App() {
             <Desserts />
             <Cart handleClick={handleClick} />
           </div>
-          <Modal className={isActive ? 'display_block' : 'display_none'} resetState={resetState} />
+          {isActive ? (<Modal className='display_block' resetState={resetState} />) : null }
         </div>
       </DessertContext.Provider>
     </main>
