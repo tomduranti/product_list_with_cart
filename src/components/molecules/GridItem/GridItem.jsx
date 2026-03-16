@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { DessertContext } from '../../../context/context.js';
 
 import '../../../sass/abstract/_utils.scss';
@@ -7,37 +7,28 @@ import './_GridItem.scss';
 import ButtonAddToCart from '../../atoms/Button/ButtonAddToCart.jsx';
 import ButtonCounter from '../../atoms/Button/ButtonCounter.jsx';
 
-export default function GridItem({ image, dessert }) {
+export default function GridItem({ image, name, description, price, id }) {
     const [dessertItems, setDessertItems] = useContext(DessertContext);
-    let [count, setCount] = useState(0);
+    let count = dessertItems.find(obj => obj.id === id)?.count ?? 0;
 
-    useEffect(() => {
-        //this effect is triggered by ButtonDelete which deletes the object from dessertItems
-        //every GridItem then checks whether its object exists in dessertItems: if it doesn't, its count is reset to 0
-        const isFound = dessertItems.some(obj => obj.description === dessert.description);
-        if (!isFound) return setCount(0);
-    }, [dessertItems])
-
-
-    function setGridObject(updatedCount) {
+    function setGridItem(updatedCount) {
         setDessertItems(arr => {
-            const isFound = arr.some(obj => obj.description === dessert.description);
+            const isFound = arr.some(obj => obj.id === id);
 
             //if the object doesn't exist yet in array, create it
-            if (!isFound) return [...arr, { description: dessert.description, price: dessert.price, count: updatedCount, thumbnail: image.thumbnail }];
+            if (!isFound) return [...arr, { description: description, price: price, count: updatedCount, thumbnail: image.thumbnail, id: id }];
 
             //if the object exists and its count is 0, delete that item from the array
-            if (updatedCount === 0) return arr.filter(obj => obj.description !== dessert.description);
+            if (updatedCount === 0) return arr.filter(obj => obj.id !== id);
 
             //if the object exists and its count is more than 1, update that object with the latest count and copy the rest of the array
-            return (arr.map(obj => { return (obj.description === dessert.description) ? { ...obj, count: updatedCount } : obj }))
+            return (arr.map(obj => { return (obj.id === id) ? { ...obj, count: updatedCount } : obj }))
         })
     }
 
     function counter(polarity) {
         const newCount = polarity ? count + 1 : count - 1;
-        setCount(newCount);
-        setGridObject(newCount);
+        setGridItem(newCount);
     }
 
     return (
@@ -52,9 +43,9 @@ export default function GridItem({ image, dessert }) {
                 </picture>
             </div>
             <div className='grid_item__info'>
-                <span className='grid_item__name  text_preset_4'>{dessert.name}</span>
-                <h3 className='grid_item__description  text_preset_3'>{dessert.description}</h3>
-                <span className='grid_item__price  text_preset_3'>${dessert.price}</span>
+                <span className='grid_item__name  text_preset_4'>{name}</span>
+                <h3 className='grid_item__description  text_preset_3'>{description}</h3>
+                <span className='grid_item__price  text_preset_3'>${price}</span>
             </div>
         </div>
     )

@@ -52,11 +52,10 @@ export const items = [
             thumbnail: waffleThumbnail,
             alt: 'waffle dessert',
         },
-        dessert: {
-            name: 'Waffle',
-            description: 'Waffle with Berries',
-            price: '6.50',
-        }
+        name: 'Waffle',
+        description: 'Waffle with Berries',
+        price: 6.50,
+        id: 1,
     },
     {
         image: {
@@ -66,11 +65,10 @@ export const items = [
             thumbnail: cremeBruleeThumbnail,
             alt: 'crème brûlée dessert',
         },
-        dessert: {
-            name: 'Crème Brûlée',
-            description: 'Vanilla Bean Crème Brûlée',
-            price: '7.00',
-        }
+        name: 'Crème Brûlée',
+        description: 'Vanilla Bean Crème Brûlée',
+        price: 7.00,
+        id: 2,
     },
     {
         image: {
@@ -80,11 +78,10 @@ export const items = [
             thumbnail: macaronThumbnail,
             alt: 'macaron dessert',
         },
-        dessert: {
-            name: 'Macaron',
-            description: 'Macaron Mix of Five',
-            price: '8.00',
-        }
+        name: 'Macaron',
+        description: 'Macaron Mix of Five',
+        price: 8.00,
+        id: 3,
     },
     {
         image: {
@@ -94,11 +91,10 @@ export const items = [
             thumbnail: tiramisuThumbnail,
             alt: 'tiramisu dessert',
         },
-        dessert: {
-            name: 'Tiramisu',
-            description: 'Classic Tiramisu',
-            price: '5.50',
-        }
+        name: 'Tiramisu',
+        description: 'Classic Tiramisu',
+        price: 5.50,
+        id: 4,
     },
     {
         image: {
@@ -108,11 +104,10 @@ export const items = [
             thumbnail: baklavaThumbnail,
             alt: 'baklava dessert',
         },
-        dessert: {
-            name: 'Baklava',
-            description: 'Pistachio Baklava',
-            price: '4.00',
-        }
+        name: 'Baklava',
+        description: 'Pistachio Baklava',
+        price: 4.00,
+        id: 5,
     },
     {
         image: {
@@ -122,11 +117,10 @@ export const items = [
             thumbnail: lemonMeringueThumbnail,
             alt: 'lemon meringue dessert',
         },
-        dessert: {
-            name: 'Pie',
-            description: 'Lemon Meringue Pie',
-            price: '5.00',
-        }
+        name: 'Pie',
+        description: 'Lemon Meringue Pie',
+        price: 5.00,
+        id: 6,
     },
     {
         image: {
@@ -136,11 +130,10 @@ export const items = [
             thumbnail: velvetCakeThumbnail,
             alt: 'velvet cake dessert',
         },
-        dessert: {
-            name: 'Cake',
-            description: 'Red Velvet Cake',
-            price: '4.50',
-        }
+        name: 'Cake',
+        description: 'Red Velvet Cake',
+        price: 4.50,
+        id: 7,
     },
     {
         image: {
@@ -150,11 +143,10 @@ export const items = [
             thumbnail: brownieThumbnail,
             alt: 'brownie dessert',
         },
-        dessert: {
-            name: 'Brownie',
-            description: 'Salted Caramel Brownie',
-            price: '5.50',
-        }
+        name: 'Brownie',
+        description: 'Salted Caramel Brownie',
+        price: 5.50,
+        id: 8,
     },
     {
         image: {
@@ -164,10 +156,9 @@ export const items = [
             thumbnail: pannaCottaThumbnail,
             alt: 'panna cotta dessert',
         },
-        dessert: {
-            name: 'Panna Cotta',
-            description: 'Vanilla Panna Cotta',
-            price: '6.50',
-        }
+        name: 'Panna Cotta',
+        description: 'Vanilla Panna Cotta',
+        price: 6.50,
+        id: 9,
     }
 ]

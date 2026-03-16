@@ -4,7 +4,7 @@ import '../../../sass/abstract/_utils.scss';
 import iconIncreaseCount from '../../../assets/icon/icon_increase_quantity.svg';
 import iconDecreaseCount from '../../../assets/icon/icon_decrease_quantity.svg';
 
-export default function ButtonCounter({ count, onIncrease, onDecrease }) {
+export default function ButtonCounter({ onIncrease, onDecrease, count }) {
     return (
         <button className='button  button--cta_counter  button--abs_position  button--bg_red' type='button'>
             <div className='button__container  button__container--space_between'>

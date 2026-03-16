@@ -5,7 +5,7 @@ import { items } from './items.js';
 
 export default function Desserts() {
     const dessert = items.map(item => {
-        return <li><GridItem className='desserts__grid_item' image={item.image} dessert={item.dessert} /></li>
+        return <li key={item.id}><GridItem className='desserts__grid_item' image={item.image} description={item.description} price={item.price} id={item.id} /></li>
     })
 
     return (
