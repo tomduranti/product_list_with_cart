@@ -16,6 +16,8 @@ export default function App() {
     setIsActive(!isActive);
   }
 
+  const totalPrice = [...dessertItems].reduce((accumulator, currentValue) => accumulator + (currentValue.price * currentValue.count), 0);
+
   const resetState = () => {
     //empties the array
     setDessertItems(arr => []);
@@ -29,9 +31,9 @@ export default function App() {
         <div className='page'>
           <div className='page__container'>
             <Desserts />
-            <Cart handleClick={handleClick} />
+            <Cart handleClick={handleClick} totalPrice={totalPrice} />
           </div>
-          {isActive ? (<Modal className='display_block' resetState={resetState} />) : null }
+          {isActive ? (<Modal resetState={resetState} totalPrice={totalPrice} />) : null }
         </div>
       </DessertContext.Provider>
     </main>

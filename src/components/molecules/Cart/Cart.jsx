@@ -10,11 +10,10 @@ import ButtonOrder from '../../atoms/Button/ButtonOrder.jsx';
 import TotalOrder from '../../atoms/TotalOrder/TotalOrder.jsx';
 import ListItem from '../../atoms/ListItem/ListItem.jsx';
 
-export default function Cart({ handleClick }) {
+export default function Cart({ handleClick, totalPrice }) {
     const [dessertItems, setDessertItems] = useContext(DessertContext);
 
     const totalCount = [...dessertItems].reduce((accumulator, currentValue) => accumulator + currentValue.count, 0);
-    const totalPrice = [...dessertItems].reduce((accumulator, currentValue) => accumulator + (currentValue.price * currentValue.count), 0);
 
     function deleteGridItem(itemToDelete) {
         //removes the object from dessertItems, yet does not reset count

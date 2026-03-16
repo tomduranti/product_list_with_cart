@@ -1,3 +1,4 @@
+@use '../../../sass/abstract/animations' as *;
 @use '../../../sass/abstract/variables' as *;
 @use '../../../sass/abstract/mixins' as *;
 
@@ -9,6 +10,10 @@
     background-color: hsl(0deg, 0%, 0%, .5);
 
     overflow-y: auto; //allows modal__container to be scrolled if it's too long
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &__container {
 
@@ -26,21 +31,17 @@
 
         border-radius: $radius_avg_pill;
 
-        @include transition(transform, .3s, ease);
-
-        transform: translateY(100%);
-
+        animation: slideY .3s;
 
         @include respond_to(min, m_screen) {
+            bottom: initial;
+            left: initial;
+
             max-inline-size: $container_inline_layout_md;
 
             padding-inline: $padding_block_layout_md;
             padding-block-end: $padding_block_layout_md;
 
-            top: 50%;
-            left: 50%;
-            bottom: initial;
-            transform: translate(-50%, -50%);
         }
 
         @include respond_to(min, l_screen) {
