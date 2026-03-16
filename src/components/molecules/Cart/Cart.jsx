@@ -7,6 +7,7 @@ import emptyCartImage from '../../../assets/icon/illustration_empty_cart.svg';
 
 import CarbonNeutralInfo from '../../atoms/CarbonNeutralInfo/CarbonNeutralInfo.jsx';
 import ButtonOrder from '../../atoms/Button/ButtonOrder.jsx';
+import ButtonDelete from '../../atoms/Button/ButtonDelete.jsx';
 import TotalOrder from '../../atoms/TotalOrder/TotalOrder.jsx';
 import ListItem from '../../atoms/ListItem/ListItem.jsx';
 
@@ -17,13 +18,16 @@ export default function Cart({ handleClick, totalPrice }) {
 
     function deleteGridItem(itemToDelete) {
         //removes the object from dessertItems, yet does not reset count
-        setDessertItems(arr => {
-            return arr.filter(obj => obj.id !== itemToDelete);
-        })
+        setDessertItems(arr => arr.filter(obj => obj.id !== itemToDelete));
     }
 
     const listItems = dessertItems.map(dessertItem =>
-        <li className='list_item' key={dessertItem.id}><ListItem description={dessertItem.description} price={dessertItem.price} id={dessertItem.id} count={dessertItem.count} deleteGridItem={deleteGridItem} /></li>
+        <li className='list_item' key={dessertItem.id}>
+            <div className='list_item__item'>
+                <ListItem description={dessertItem.description} price={dessertItem.price} id={dessertItem.id} count={dessertItem.count} deleteGridItem={deleteGridItem} />
+                <ButtonDelete onClick={() => deleteGridItem(dessertItem.id)} />
+            </div>
+        </li>
     )
 
     return (

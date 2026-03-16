@@ -33,7 +33,7 @@ export default function App() {
             <Desserts />
             <Cart handleClick={handleClick} totalPrice={totalPrice} />
           </div>
-          {isActive ? (<Modal resetState={resetState} totalPrice={totalPrice} />) : null }
+          {isActive ? (<Modal resetState={resetState} totalPrice={totalPrice} isActive={isActive}/>) : null }
         </div>
       </DessertContext.Provider>
     </main>
