@@ -1,16 +1,26 @@
 @use './variables' as *;
 @use './mixins' as *;
 
+%flex_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .text_lowercase {
     text-transform: lowercase;
 }
 
+.text_capitalize {
+    text-transform: capitalize;
+}
+
 .text_white_color {
-    color: $white;
+    color: $text_white;
 }
 
 .added_item {
-    outline: $outline_component_sm solid $red;
+    outline: $outline_component_sm solid $outline_color_red;
     outline-offset: calc($outline_component_sm * -1);
 
     @include transition(outline, .05s, ease);

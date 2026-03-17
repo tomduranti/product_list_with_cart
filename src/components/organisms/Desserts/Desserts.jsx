@@ -10,7 +10,7 @@ export default function Desserts() {
 
     return (
         <div className='desserts'>
-            <h1 className='desserts__heading  text_preset_1'>desserts</h1>
+            <h1 className='desserts__heading  text_preset_1  text_capitalize'>desserts</h1>
             <ul className='desserts__grid'>
                 {dessert}
             </ul>

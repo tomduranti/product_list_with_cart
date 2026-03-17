@@ -10,45 +10,45 @@
 
         display: block;
 
-        border-bottom: 1px solid $primary_border_color_rose--100;
+        border-bottom: 1px solid $border_color_rose--100;
 
-        margin-block: $margin_block_components_xs;
+        margin-block: $margin_block_component_xs;
     }
     
 
     &:nth-last-child(2)::after {
-        margin-block: $margin_block_components_sm;
+        margin-block: $margin_block_component_sm;
     }
 
 
     &__description {
-        color: $primary_text_rose--900;
+        color: $text_rose--900;
 
-        margin-block-end: $margin_blockend_components_xs;
+        margin-block-end: $margin_blockend_component_xs;
     }
 
 
     &__quantity_and_price {
         display: flex;
         align-items: center;
-        gap: $gap_block_controls_sm;
+        gap: $gap_block_control_sm;
     }
 
 
     &__count {
-        inline-size: $inlinesize_controls_xs; //magic number to follow design
+        inline-size: $inlinesize_control_xs; //magic number to follow design
 
-        color: $primary_text_red;
+        color: $text_red;
     }
 
 
     &__price {
-        color: $primary_text_rose--500;
+        color: $text_rose--500;
     }
 
 
     &__total_price {
-        color: $primary_text_rose--500;
+        color: $text_rose--500;
     }
 
 
@@ -61,7 +61,7 @@
     //the following classes are in Modal.jsx
     &__thumbnail_and_info {
         display: flex;
-        gap: $gap_inline_controls_md;
+        gap: $gap_inline_control_md;
     }
     
 
@@ -75,6 +75,6 @@
 
 
     &__total_price--modal {
-        color: $primary_text_rose--900;
+        color: $text_rose--900;
     }
 }

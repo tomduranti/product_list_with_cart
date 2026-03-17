@@ -7,18 +7,15 @@
 
 //COLORS
 $black: hsl(0deg, 0%, 0%);
-
+$black--400: hsl(0deg, 0%, 0%, .5);
 $green: hsl(159deg, 69%, 38%);
-
 $red: hsl(14deg, 86%, 42%);
-
 $rose--50: hsl(20deg, 50%, 98%);
 $rose--100: hsl(13deg, 31%, 94%);
 $rose--300: hsl(14deg, 25%, 72%);
 $rose--400: hsl(7deg, 20%, 60%);
 $rose--500: hsl(12deg, 20%, 44%);
 $rose--900: hsl(14deg, 65%, 9%);
-
 $white: hsl(0deg, 0%, 100%);
 
 //SPACING
@@ -40,15 +37,6 @@ $special_spacing: (
   5: to_rem(5),
 );
 
-//==========================================================
-//  UTILS
-//==========================================================
-
-%flex_center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 //==========================================================
 //  DESIGN TOKENS
@@ -56,77 +44,76 @@ $special_spacing: (
 
 /* TOKEN TAXONOMY
 * $spacetype_direction_scale_size
-* spacetype: spacing such as margin or padding or container;
+* spacetype: spacing such as margin, padding, container, inlinesize, or blocksize;
 * direction: inline or block;
 * scale: control (atoms), component (molecules), section (organisms), layout (pages);
-* size: sm, md, lg, xl;
+* size: xs, sm, md, lg, xl;
 */
 
 //COLORS
-$primary_bg_white: $white;
-$primary_text_rose--900: $rose--900;
-$primary_text_rose--500: $rose--500;
-$primary_text_red: $red;
-$primary_border_color_rose--400: $rose--400;
-$primary_border_color_rose--100: $rose--100;
-$primary_background_color_rose: $rose--50;
+$background_color_white: $white;
+$background_color_red: $red;
+$background_color_rose: $rose--50;
+$border_color_red: $red;
+$border_color_rose--400: $rose--400;
+$border_color_rose--100: $rose--100;
 
-$secondary_border_color_red: $red;
-$secondary_text_red: $red;
-$secondary_bg_red: $red;
+$outline_color_red: $red;
+
+$text_red: $red;
+$text_white: $white;
+$text_rose--500: $rose--500;
+$text_rose--900: $rose--900;
 
 //SPACING
-
 //Gap
-$gap_inline_controls_sm: map.get($spacing, 8);
-$gap_inline_controls_md: map.get($spacing, 16);
-$gap_inline_controls_lg: map.get($spacing, 24);
-$gap_block_controls_sm: map.get($spacing, 8);
-$gap_block_controls_md: map.get($spacing, 16);
-$gap_block_controls_lg: map.get($spacing, 24);
-$gap_block_controls_xlg: map.get($spacing, 32);
+$gap_inline_control_sm: map.get($spacing, 8);
+$gap_inline_control_md: map.get($spacing, 16);
+$gap_inline_control_lg: map.get($spacing, 24);
+$gap_block_control_sm: map.get($spacing, 8);
+$gap_block_control_md: map.get($spacing, 16);
+$gap_block_control_lg: map.get($spacing, 24);
+$gap_block_control_xlg: map.get($spacing, 32);
 
 //Padding & margin
-$padding_controls_sm: map.get($spacing, 12);
-$padding_controls_md: map.get($spacing, 24);
-$padding_block_controls_sm: map.get($spacing, 12);
-$padding_block_controls_md: map.get($spacing, 16);
-$padding_block_controls_lg: map.get($spacing, 24);
-$padding_inline_controls_sm: map.get($spacing, 12);
-$padding_inline_controls_md: map.get($spacing, 24);
-$padding_inline_controls_lg: calc(map.get($spacing, 24) + map.get($spacing, 4));
+$padding_full_control_md: map.get($spacing, 24);
+$padding_block_control_sm: map.get($spacing, 12);
+$padding_block_control_md: map.get($spacing, 16);
+$padding_block_control_lg: map.get($spacing, 24);
 $padding_block_layout_sm: map.get($spacing, 24);
 $padding_block_layout_md: map.get($spacing, 40);
 $padding_block_layout_lg: map.get($spacing, 88);
+$padding_inline_control_sm: map.get($spacing, 12);
+$padding_inline_control_md: map.get($spacing, 24);
+$padding_inline_control_lg: calc(map.get($spacing, 24) + map.get($spacing, 4));
 
-$margin_block_components_xs: map.get($spacing, 16);
-$margin_block_components_sm: map.get($spacing, 24);
-$margin_block_components_md: calc(map.get($spacing, 32) + map.get($spacing, 4) + map.get($special_spacing, 2));
-$margin_blockstart_components_sm: map.get($spacing, 16);
-$margin_blockend_components_xs: map.get($spacing, 8);
-$margin_blockend_components_xs2: map.get($spacing, 16); //refactor this
-$margin_blockend_components_sm: map.get($spacing, 24);
-$margin_blockend_components_md: map.get($spacing, 32);
+$margin_block_component_xs: map.get($spacing, 16);
+$margin_block_component_sm: map.get($spacing, 24);
+$margin_block_component_md: calc(map.get($spacing, 32) + map.get($spacing, 4) + map.get($special_spacing, 2));
+$margin_blockstart_component_sm: map.get($spacing, 16);
+$margin_blockend_component_xs: map.get($spacing, 8);
+$margin_blockend_component_md: map.get($spacing, 24);
+$margin_blockend_component_lg: map.get($spacing, 32);
 $margin_inline_layout_lg: calc(map.get($spacing, 88) + map.get($spacing, 24));
 
 //Inline/Block size
-$inlinesize_controls_xs: calc(map.get($spacing, 12) + map.get($spacing, 8) + map.get($special_spacing, 1));
-$inlinesize_controls_sm: calc(map.get($spacing, 40) * 4);
-$blocksize_controls_button: calc(map.get($spacing, 40) + map.get($spacing, 4));
-$blocksize_controls_sm: calc(map.get($spacing, 40) * 5 + map.get($spacing, 12));
-$blocksize_controls_lg: calc(map.get($spacing, 40) * 5 + map.get($spacing, 40));
+$inlinesize_control_xs: calc(map.get($spacing, 12) + map.get($spacing, 8) + map.get($special_spacing, 1));
+$inlinesize_control_sm: calc(map.get($spacing, 40) * 4);
+$blocksize_control_button: calc(map.get($spacing, 40) + map.get($spacing, 4));
+$blocksize_control_sm: calc(map.get($spacing, 40) * 5 + map.get($spacing, 12));
+$blocksize_control_lg: calc(map.get($spacing, 40) * 5 + map.get($spacing, 40));
 
 //Container
 $container_inline_layout_xs: 41.11%;
-$container_inline_layout_sm: 87.2%;
-$container_inline_layout_md: 89.58%;
-$container_inline_layout_lg: 55.57%;
+$container_inline_layout_sm: 55.57%;
+$container_inline_layout_md: 87.2%;
+$container_inline_layout_lg: 89.58%;
 
 //Radius
-$radius_small_pill: to_rem(4);
-$radius_mild_pill: to_rem(8);
-$radius_avg_pill: to_rem(12);
-$radius_pill_button: to_rem(32);
+$radius_pill_xs: to_rem(4);
+$radius_pill_sm: to_rem(8);
+$radius_pill_md: to_rem(12);
+$radius_pill_lg: to_rem(32);
 
 //Outline
 $outline_component_sm: map.get($special_spacing, 2);

@@ -33,7 +33,7 @@ export default function Cart({ toggleModal, totalPrice }) {
     return (
         <div className='cart'>
             <div className='cart__container'>
-                <h2 className='cart__heading  text_preset_2'>your cart ({totalCount})</h2>
+                <h2 className='cart__heading  text_preset_2  text_capitalize'>your cart ({totalCount})</h2>
                 {totalCount ?
                     (<>
                         <ul className='list_items'>

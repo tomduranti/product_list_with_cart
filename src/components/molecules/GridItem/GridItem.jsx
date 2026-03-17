@@ -9,7 +9,7 @@ import ButtonCounter from '../../atoms/Button/ButtonCounter.jsx';
 
 export default function GridItem({ image, name, description, price, id }) {
     const [dessertItems, setDessertItems] = useContext(DessertContext);
-    let count = dessertItems.find(obj => obj.id === id)?.count ?? 0;
+    const count = dessertItems.find(obj => obj.id === id)?.count ?? 0;
 
     function setGridItem(updatedCount) {
         setDessertItems(arr => {
@@ -43,9 +43,9 @@ export default function GridItem({ image, name, description, price, id }) {
                 </picture>
             </div>
             <div className='grid_item__info'>
-                <span className='grid_item__name  text_preset_4'>{name}</span>
+                <span className='grid_item__name  text_preset_4  text_capitalize'>{name}</span>
                 <h3 className='grid_item__description  text_preset_3'>{description}</h3>
-                <span className='grid_item__price  text_preset_3'>${price}</span>
+                <span className='grid_item__price  text_preset_3'>${price.toFixed(2)}</span>
             </div>
         </div>
     )

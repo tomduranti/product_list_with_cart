@@ -1,19 +1,19 @@
 @use '../../../sass/abstract/variables' as *;
 @use '../../../sass/abstract/mixins' as *;
+@use '../../../sass/abstract/utils' as *;
 
 .button {
-    text-transform: capitalize;
     text-wrap: nowrap; //to prevent text from wrapping at small vw size
 
     border: 1px solid transparent;
-    border-radius: $radius_pill_button;
+    border-radius: $radius_pill_lg;
 
 
     &__container {
         @extend %flex_center;
 
         &--gap {
-            gap: $gap_inline_controls_sm;
+            gap: $gap_inline_control_sm;
         }
 
         &--space_between {
@@ -28,31 +28,31 @@
 
 
     &--cta_add_to_cart {
-        background-color: $primary_bg_white;
+        background-color: $background_color_white;
 
-        border-color: $primary_border_color_rose--400;
+        border-color: $border_color_rose--400;
 
-        padding: $padding_block_controls_sm $padding_inline_controls_lg;
+        padding: $padding_block_control_sm $padding_inline_control_lg;
 
-        color: $primary_text_rose--900;
+        color: $text_rose--900;
 
         inline-size: 100%;
-        max-inline-size: $inlinesize_controls_sm;
-        block-size: $blocksize_controls_button;
+        max-inline-size: $inlinesize_control_sm;
+        block-size: $blocksize_control_button;
 
         @include transition(all, .3s, ease);
 
         &:hover {
-            border-color: $secondary_border_color_red;
-            color: $secondary_text_red;
+            border-color: $border_color_red;
+            color: $text_red;
         }
     }
 
 
     &--bg_red {
-        background-color: $secondary_bg_red;
+        background-color: $background_color_red;
 
-        border-color: $secondary_border_color_red;
+        border-color: $border_color_red;
     }
     
 
@@ -69,18 +69,18 @@
 
 
     &--cta_counter {
-        padding-inline: $padding_inline_controls_sm;
+        padding-inline: $padding_inline_control_sm;
 
         inline-size: 100%;
-        max-inline-size: $inlinesize_controls_sm;
-        block-size: $blocksize_controls_button;
+        max-inline-size: $inlinesize_control_sm;
+        block-size: $blocksize_control_button;
 
         cursor: default;
     }
 
 
     &--cta_order {
-        padding: $padding_inline_controls_sm;
+        padding: $padding_inline_control_sm;
 
         inline-size: 100%;
     }

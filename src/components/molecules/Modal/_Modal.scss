@@ -1,22 +1,19 @@
 @use '../../../sass/abstract/animations' as *;
 @use '../../../sass/abstract/variables' as *;
 @use '../../../sass/abstract/mixins' as *;
+@use '../../../sass/abstract/utils' as *;
 
 .modal {
-
     position: fixed;
     inset: 0;
 
-    background-color: hsl(0deg, 0%, 0%, .5);
+    background-color: $black--400;
 
     overflow-y: auto; //allows modal__container to be scrolled if it's too long
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @extend %flex_center;
 
     &__container {
-
         position: absolute;
         bottom: 0;
         left: 0;
@@ -25,11 +22,11 @@
 
         padding-block-start: $padding_block_layout_md;
         padding-block-end: $padding_block_layout_sm;
-        padding-inline: $padding_inline_controls_md;
+        padding-inline: $padding_inline_control_md;
 
-        background-color: $white;
+        background-color: $background_color_white;
 
-        border-radius: $radius_avg_pill;
+        border-radius: $radius_pill_md;
 
         animation: slideY .3s;
 
@@ -37,11 +34,10 @@
             bottom: initial;
             left: initial;
 
-            max-inline-size: $container_inline_layout_md;
+            max-inline-size: $container_inline_layout_lg;
 
             padding-inline: $padding_block_layout_md;
             padding-block-end: $padding_block_layout_md;
-
         }
 
         @include respond_to(min, l_screen) {
@@ -51,32 +47,30 @@
 
 
     &__image {
-        margin-block-end: $margin_blockend_components_sm;
+        margin-block-end: $margin_blockend_component_md;
     }
 
 
     &__confirmed_items {
-        background-color: $primary_background_color_rose;
+        background-color: $background_color_rose;
 
-        padding-block-start: $padding_block_controls_lg;
-        padding-inline: $padding_controls_md;
-        margin-block-end: $margin_blockend_components_md;
+        padding-block-start: $padding_block_control_lg;
+        padding-inline: $padding_full_control_md;
+        margin-block-end: $margin_blockend_component_lg;
 
-        border-radius: $radius_mild_pill;
+        border-radius: $radius_pill_sm;
     }
 
 
     &__confirmation_message {
-        margin-block-end: $margin_blockend_components_md;
+        margin-block-end: $margin_blockend_component_lg;
     }
 
 
     &__confirmation_heading {
-        text-transform: capitalize;
-
         max-inline-size: 10ch;
 
-        margin-block-end: $margin_blockend_components_xs;
+        margin-block-end: $margin_blockend_component_xs;
 
         @include respond_to(min, m_screen) {
             max-inline-size: 100%;
@@ -85,7 +79,7 @@
 
 
     &__confirmation_subheading {
-        color: $primary_text_rose--500;
+        color: $text_rose--500;
         line-height: 1; //to follow design's height
     }
 
@@ -93,6 +87,6 @@
     &__thumbnail {
         inline-size: 48px;
         block-size: 48px;
-        border-radius: $radius_small_pill;
+        border-radius: $radius_pill_xs;
     }
 }

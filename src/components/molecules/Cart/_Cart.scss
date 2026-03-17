@@ -6,7 +6,7 @@
 
     background-color: $white;
 
-    border-radius: $radius_avg_pill;
+    border-radius: $radius_pill_md;
 
     @include respond_to(min, l_screen) {
         align-self: flex-start;
@@ -14,15 +14,14 @@
 
      
     &__container {
-        padding: $padding_controls_md;
+        padding: $padding_full_control_md;
     }
 
 
     &__heading {
-        text-transform: capitalize;
-        color: $primary_text_red;
+        color: $text_red;
 
-        margin-block-end: $margin_blockend_components_sm;
+        margin-block-end: $margin_blockend_component_md;
     }
 }
 
@@ -36,15 +35,15 @@
 
 
     &__image {
-        margin-block: $margin_block_components_xs;
+        margin-block: $margin_block_component_xs;
         margin-inline: auto;
     }
 
 
     &__text {
-        margin-block-end: $margin_block_components_xs;
+        margin-block-end: $margin_block_component_xs;
 
         text-align: center;
-        color: $primary_text_rose--500;
+        color: $text_rose--500;
     }
 }

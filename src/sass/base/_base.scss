@@ -4,16 +4,16 @@
 .page {
     min-block-size: 100vh;
 
-    background-color: $primary_background_color_rose;
+    background-color: $background_color_rose;
 
     &__container {
-        max-inline-size: $container_inline_layout_sm;
+        max-inline-size: $container_inline_layout_md;
 
         padding-block: $padding_block_layout_sm;
         margin-inline: auto;
 
         @include respond_to(min, m_screen) {
-            max-inline-size: $container_inline_layout_md;
+            max-inline-size: $container_inline_layout_sm;
 
             padding-block: $padding_block_layout_md;
         }
@@ -21,7 +21,7 @@
         @include respond_to(min, l_screen) {
             display: grid;
             grid-template-columns: 1fr 384px; //magic number to match design
-            column-gap: $gap_block_controls_xlg;
+            column-gap: $gap_block_control_xlg;
 
             padding-block: $padding_block_layout_lg;
             margin-inline: $margin_inline_layout_lg;
