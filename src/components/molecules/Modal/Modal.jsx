@@ -31,8 +31,8 @@ export default function Modal({ resetState, totalPrice, isActive }) {
             <div className='modal__container'>
                 <div className='modal__confirmation_message'>
                     <img className='modal__image' src={OrderConfirmed} alt='your order is confirmed!' />
-                    <h2 className='modal__confirmation_heading  text_preset_1  text_capitalize'>order confirmed</h2>
-                    <h3 className='modal__confirmation_subheading  text_preset_3--regular'>We hope you enjoy your food!</h3>
+                    <h3 className='modal__confirmation_heading  text_preset_1  text_capitalize'>order confirmed</h3>
+                    <span className='modal__confirmation_subheading  text_preset_3--regular'>We hope you enjoy your food!</span>
                 </div>
                 <div className='modal__confirmed_items'>
                     <ul className='modal__list_confirmation_items'>

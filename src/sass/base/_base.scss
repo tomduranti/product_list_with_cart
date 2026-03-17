@@ -13,7 +13,7 @@
         margin-inline: auto;
 
         @include respond_to(min, m_screen) {
-            max-inline-size: $container_inline_layout_sm;
+            max-inline-size: $container_inline_layout_lg;
 
             padding-block: $padding_block_layout_md;
         }
