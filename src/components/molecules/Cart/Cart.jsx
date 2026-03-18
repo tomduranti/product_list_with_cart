@@ -31,7 +31,7 @@ export default function Cart({ toggleModal, totalPrice }) {
     )
 
     return (
-        <aside className='cart' aria-labelledby="cart-heading">
+        <aside className='cart' aria-label="Your cart">
             <div className='cart__container'>
                 <h3 className='cart__heading  text_preset_2  text_capitalize'>your cart ({totalCount})</h3>
                 {totalCount ?
