@@ -1,16 +1,89 @@
-# React + Vite
+# Product list with cart
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Project
 
-Currently, two official plugins are available:
+This is a menu application where users can select desserts in any quantity and see the final count and price. The app adapts to any device's screen size, and all interactive elements on the page have a hover state.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Screenshot
 
-## React Compiler
+![](./_resources/product_list_with_cart_demo.gif)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Links
 
-## Expanding the ESLint configuration
+- Live Site URL: [Product list with cart](https://tomduranti.github.io/product_list_with_cart/)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Code highlights
+
+- introduction of token taxonomy acting as a single source of truth for colors and spacing
+- tinified jpgs to compress images' weights
+- upper and lower limit for the button counter to avoid easy bugs like purchasing negative quantities or an unreasonable amount of items (e.g., 1 thousand desserts)
+- use of global context to share data across different components, use of state management to keep local states truly local to avoid excessive prop drilling
+
+```
+import { useState } from 'react';
+import { DessertContext } from './context/context.js';
+
+export default function App() {
+
+  const [dessertItems, setDessertItems] = useState([]);
+
+  return (
+    <main>
+      <DessertContext.Provider value={[dessertItems, setDessertItems]}>
+        //code that consumes global context
+      </DessertContext.Provider>
+    </main>
+  )
+}
+```
+
+- separation of concerns: useCustomHook and Component.jsx to separate business logic from UI
+
+```
+(GridItem.jsx)
+import useGridItem from './useGridItem.js';
+
+export default function GridItem({ image, name, description, price, id }) {
+
+    const {
+        count,
+        updateCount,
+    } = useGridItem(image, description, price, id)
+
+//rest of the code
+}
+
+
+(useGridItem.js)
+import { useContext } from 'react';
+import { DessertContext } from '../../../context/context.js';
+
+const useGridItem = (image, description, price, id) => {
+
+    const [dessertItems, setDessertItems] = useContext(DessertContext);
+
+    //function declarations
+
+    return {
+        count,
+        updateCount,
+    }
+
+}
+```
+
+- images have: outline: 2px solid red; and outline-offset: -2px; to make the outline match images' rounded shape
+
+### Built with
+
+- Semantic HTML5
+- Sass
+- CSS Grid
+- BEM
+- Responsive & adaptive design
+- Mobile-first workflow
+- JavaScript
+
+### Further enhancements
+1) Full WCAG/ARIA compliance and optimal keyboard navigation
+2) Navigate the whole project and perform all actions using only keyboard

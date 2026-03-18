@@ -2,16 +2,15 @@
 @use '../../../sass/abstract/utils' as *;
 
 .carbon_neutral_info {
-    inline-size: 100%;
+    background-color: $background_color_rose;
 
     border-radius: $radius_pill_sm;
 
+    inline-size: 100%;
+
     padding-block: $padding_block_control_md;
     margin-block-end: $margin_blockend_component_md;
-
-    background-color: $background_color_rose;
-
-
+    
     &__container {
         @extend %flex_center;
         gap: $gap_inline_control_sm;

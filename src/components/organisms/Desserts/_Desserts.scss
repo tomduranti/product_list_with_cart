@@ -2,7 +2,6 @@
 @use '../../../sass/abstract/mixins' as *;
 
 .desserts {
-
    margin-block-end: $margin_blockend_component_lg;
 
    @include respond_to(min, l_screen) {

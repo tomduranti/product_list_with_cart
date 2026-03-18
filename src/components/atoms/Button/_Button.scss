@@ -3,11 +3,10 @@
 @use '../../../sass/abstract/utils' as *;
 
 .button {
-    text-wrap: nowrap; //to prevent text from wrapping at small vw size
-
     border: 1px solid transparent;
     border-radius: $radius_pill_lg;
 
+    text-wrap: nowrap; //to prevent text from wrapping at small vw size
 
     &__container {
         @extend %flex_center;
@@ -32,9 +31,9 @@
 
         border-color: $border_color_rose--400;
 
-        padding: $padding_block_control_sm $padding_inline_control_lg;
-
         color: $text_rose--900;
+
+        padding: $padding_block_control_sm $padding_inline_control_lg;
 
         inline-size: 100%;
         max-inline-size: $inlinesize_control_sm;
@@ -69,20 +68,20 @@
 
 
     &--cta_counter {
-        padding-inline: $padding_inline_control_sm;
+        cursor: default;
 
         inline-size: 100%;
         max-inline-size: $inlinesize_control_sm;
         block-size: $blocksize_control_button;
 
-        cursor: default;
+        padding-inline: $padding_inline_control_sm;
     }
 
 
     &--cta_order {
-        padding: $padding_inline_control_sm;
-
         inline-size: 100%;
+
+        padding: $padding_inline_control_sm;
     }
 }
 

@@ -4,16 +4,22 @@
 @use '../../../sass/abstract/utils' as *;
 
 .modal {
+    background-color: $black--400;
+
     position: fixed;
     inset: 0;
-
-    background-color: $black--400;
 
     overflow-y: auto; //allows modal__container to be scrolled if it's too long
 
     @extend %flex_center;
 
     &__container {
+        animation: slideY .3s;
+
+        background-color: $background_color_white;
+
+        border-radius: $radius_pill_md;      
+
         position: absolute;
         bottom: 0;
         left: 0;
@@ -22,13 +28,7 @@
 
         padding-block-start: $padding_block_layout_md;
         padding-block-end: $padding_block_layout_sm;
-        padding-inline: $padding_inline_control_md;
-
-        background-color: $background_color_white;
-
-        border-radius: $radius_pill_md;
-
-        animation: slideY .3s;
+        padding-inline: $padding_inline_control_md;   
 
         @include respond_to(min, m_screen) {
             bottom: initial;
@@ -54,11 +54,11 @@
     &__confirmed_items {
         background-color: $background_color_rose;
 
+        border-radius: $radius_pill_sm;        
+
         padding-block-start: $padding_block_control_lg;
         padding-inline: $padding_full_control_md;
         margin-block-end: $margin_blockend_component_lg;
-
-        border-radius: $radius_pill_sm;
     }
 
 
@@ -85,8 +85,9 @@
 
 
     &__thumbnail {
+        border-radius: $radius_pill_xs;
+
         inline-size: 48px;
         block-size: 48px;
-        border-radius: $radius_pill_xs;
     }
 }

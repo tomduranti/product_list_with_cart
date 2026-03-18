@@ -2,11 +2,11 @@
 @use '../../../sass/abstract/mixins' as *;
 
 .cart {
-    inline-size: 100%;
-
     background-color: $white;
 
     border-radius: $radius_pill_md;
+
+    inline-size: 100%;
 
     @include respond_to(min, l_screen) {
         align-self: flex-start;
@@ -41,9 +41,10 @@
 
 
     &__text {
+        color: $text_rose--500;
+
         margin-block-end: $margin_block_component_xs;
 
         text-align: center;
-        color: $text_rose--500;
     }
 }

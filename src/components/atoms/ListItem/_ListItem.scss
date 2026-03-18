@@ -6,11 +6,11 @@
     inline-size: 100%;
 
     &::after {
+        border-bottom: 1px solid $border_color_rose--100;
+
         content: '';
 
         display: block;
-
-        border-bottom: 1px solid $border_color_rose--100;
 
         margin-block: $margin_block_component_xs;
     }
@@ -36,9 +36,9 @@
 
 
     &__count {
-        inline-size: $inlinesize_control_xs; //magic number to follow design
-
         color: $text_red;
+
+        inline-size: $inlinesize_control_xs; //magic number to follow design
     }
 
 

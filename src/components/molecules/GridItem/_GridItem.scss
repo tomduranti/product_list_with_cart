@@ -22,11 +22,11 @@
 
 
     &__image {
-        inline-size: inherit;
-
         border-radius: $radius_pill_sm;
 
         block-size: $blocksize_control_sm; //magic number according to design, this needs to change with button--abs_position
+
+        inline-size: inherit;
 
         object-fit: cover;
 
