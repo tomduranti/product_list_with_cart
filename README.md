@@ -76,13 +76,14 @@ const useGridItem = (image, description, price, id) => {
 
 ### Built with
 
+- React
+- Storybook
 - Semantic HTML5
 - Sass
 - CSS Grid
 - BEM
 - Responsive & adaptive design
 - Mobile-first workflow
-- JavaScript
 
 ### Further enhancements
 1) Full WCAG/ARIA compliance and optimal keyboard navigation
