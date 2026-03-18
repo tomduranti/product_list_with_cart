@@ -14,7 +14,7 @@ import useCart from './useCart.js';
 
 export default function Cart({ toggleModal, totalPrice }) {
 
-     const [dessertItems, setDessertItems] = useContext(DessertContext);
+     const [dessertItems] = useContext(DessertContext);
 
     const {
         totalCount,
@@ -23,15 +23,15 @@ export default function Cart({ toggleModal, totalPrice }) {
 
     const listItems = dessertItems.map(dessertItem =>
         <li className='list_item' key={dessertItem.id}>
-            <div className='list_item__item'>
+            <article className='list_item__item'>
                 <ListItem description={dessertItem.description} price={dessertItem.price} id={dessertItem.id} count={dessertItem.count} />
                 <ButtonDelete onClick={() => deleteGridItem(dessertItem.id)} />
-            </div>
+            </article>
         </li>
     )
 
     return (
-        <div className='cart'>
+        <aside className='cart' aria-labelledby="cart-heading">
             <div className='cart__container'>
                 <h3 className='cart__heading  text_preset_2  text_capitalize'>your cart ({totalCount})</h3>
                 {totalCount ?
@@ -52,6 +52,6 @@ export default function Cart({ toggleModal, totalPrice }) {
                     )
                 }
             </div>
-        </div>
+        </aside>
     )
 }

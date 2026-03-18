@@ -14,7 +14,7 @@
     @extend %flex_center;
 
     &__container {
-        animation: slideY .3s;
+        animation: slideY .3s ease-in-out;
 
         background-color: $background_color_white;
 

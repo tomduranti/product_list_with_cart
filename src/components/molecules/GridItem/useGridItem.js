@@ -5,6 +5,7 @@ const useGridItem = (image, description, price, id) => {
 
     const [dessertItems, setDessertItems] = useContext(DessertContext);
     const count = dessertItems.find(obj => obj.id === id)?.count ?? 0;
+    const hasCount = Boolean(count);
 
     const setGridItem = (updatedCount) => {
         setDessertItems(arr => {
@@ -29,6 +30,7 @@ const useGridItem = (image, description, price, id) => {
 
     return {
         count,
+        hasCount,
         updateCount,
     }
 

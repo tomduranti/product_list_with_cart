@@ -7,7 +7,7 @@ export default function ButtonAddToCart({ onClick }) {
     return (
         <button onClick={onClick} className='button  button--cta_add_to_cart  button--abs_position  text_capitalize' type='button'>
             <div className="button__container  button__container--gap">
-                <img src={iconAddToCart} alt='add to cart image'/>
+                <img src={iconAddToCart} alt=''/>
                 <span className='button__text text_preset_4--bold'>Add <span className='text_lowercase'>to</span> cart</span>
             </div>
         </button>

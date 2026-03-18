@@ -3,10 +3,12 @@
 @use '../../../sass/abstract/utils' as *;
 
 .button {
+    align-content: center;
+
     border: 1px solid transparent;
     border-radius: $radius_pill_lg;
 
-    text-wrap: nowrap; //to prevent text from wrapping at small vw size
+    white-space: nowrap; //to prevent text from wrapping at small vw size
 
     &__container {
         @extend %flex_center;
@@ -88,4 +90,5 @@
 .decrease_sign,
 .increase_sign {
     cursor: pointer;
+    line-height: 0;
 }

@@ -20,7 +20,7 @@
 
         @include respond_to(min, l_screen) {
             display: grid;
-            grid-template-columns: 1fr 384px; //magic number to match design
+            grid-template-columns: 1fr clamp(20%, 364px, 384px); //magic number to match design
             column-gap: $gap_block_control_xlg;
 
             padding-block: $padding_block_layout_lg;

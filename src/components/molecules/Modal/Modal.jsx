@@ -9,18 +9,18 @@ import ButtonOrder from '../../atoms/Button/ButtonOrder.jsx';
 import ListItem from '../../atoms/ListItem/ListItem.jsx';
 
 export default function Modal({ resetState, totalPrice, isActive }) {
-    const [dessertItems, setDessertItems] = useContext(DessertContext);
+    const [dessertItems] = useContext(DessertContext);
 
     const listItems = dessertItems.map(dessertItem => {
         return (
             <li className='list_item' key={dessertItem.id}>
-                <div className='list_item__item'>
+                <article className='list_item__item'>
                     <div className="list_item__thumbnail_and_info">
                         <img className='modal__thumbnail' src={dessertItem.thumbnail} alt='' />
                         <ListItem isActive={isActive} description={dessertItem.description} price={dessertItem.price} id={dessertItem.id} count={dessertItem.count} />
                     </div>
                     <span className='list_item__total_price list_item__total_price--modal  text_preset_3'>${(dessertItem.price * dessertItem.count).toFixed(2)}</span>
-                </div>
+                </article>
             </li>
         )
     }
