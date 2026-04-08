@@ -20,7 +20,7 @@ export default function App() {
 
   const resetState = () => {
     //empties the array
-    setItem(arr => []);
+    setItem([]);
     //resets the modal
     toggleModal();
   }

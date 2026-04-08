@@ -19,7 +19,7 @@ export default function GridItem({ image, name, description, price, id }) {
                 <picture className='grid_item__picture'>
                     <source srcSet={image.desktopSrc} media='(min-width: 90rem)' />
                     <source srcSet={image.tabletSrc} media='(min-width: 48rem)' />
-                    <img className={`grid_item__image ${hasCount && 'added_item'}`} src={image.mobileSrc} alt={image.alt} />
+                    <img className={`grid_item__image ${hasCount ? 'added_item' : ''}`} src={image.mobileSrc} alt={image.alt} />
                 </picture>
                 {hasCount ?
                     <ButtonCounter count={count} increment={() => updateCount(true)} decrement={() => updateCount(false)} /> :
