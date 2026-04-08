@@ -21,8 +21,10 @@ export default function GridItem({ image, name, description, price, id }) {
                     <source srcSet={image.tabletSrc} media='(min-width: 48rem)' />
                     <img className={`grid_item__image ${hasCount && 'added_item'}`} src={image.mobileSrc} alt={image.alt} />
                 </picture>
-                {!hasCount && <ButtonAddToCart onClick={() => updateCount(true)} />}
-                {hasCount && <ButtonCounter count={count} increment={() => updateCount(true)} decrement={() => updateCount(false)} />}
+                {hasCount ?
+                    <ButtonCounter count={count} increment={() => updateCount(true)} decrement={() => updateCount(false)} /> :
+                    <ButtonAddToCart onClick={() => updateCount(true)} />
+                }
             </div>
             <figcaption className='grid_item__info'>
                 <span className='grid_item__name  text_preset_4  text_capitalize'>{name}</span>

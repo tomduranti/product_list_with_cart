@@ -1,14 +1,15 @@
 import { useContext } from 'react';
-import { DessertContext } from '../../../context/context.js';
+import { itemContext } from '../../../context/context.js';
 
 const useGridItem = (image, description, price, id) => {
 
-    const [dessertItems, setDessertItems] = useContext(DessertContext);
-    const count = dessertItems.find(obj => obj.id === id)?.count ?? 0;
+    const [items, setItems] = useContext(itemContext);
+    const count = items.find(obj => obj.id === id)?.count ?? 0;
     const hasCount = Boolean(count);
 
+    
     const setGridItem = (updatedCount) => {
-        setDessertItems(arr => {
+        setItems(arr => {
             const isFound = arr.some(obj => obj.id === id);
 
             //if the object doesn't exist yet in array, create it
@@ -22,6 +23,7 @@ const useGridItem = (image, description, price, id) => {
         })
     }
 
+
     const updateCount = (increment) => {
         const newCount = increment ? count + 1 : count - 1;
         setGridItem(newCount);
@@ -33,7 +35,6 @@ const useGridItem = (image, description, price, id) => {
         hasCount,
         updateCount,
     }
-
 }
 
 export default useGridItem;

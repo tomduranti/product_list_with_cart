@@ -1,7 +1,7 @@
 @use '../../../sass/abstract/variables' as *;
 @use '../../../sass/abstract/mixins' as *;
 
-.desserts {
+.products {
    margin-block-end: $margin_blockend_component_lg;
 
    @include respond_to(min, l_screen) {

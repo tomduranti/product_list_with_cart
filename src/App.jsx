@@ -1,41 +1,41 @@
 import { useState } from 'react';
-import { DessertContext } from './context/context.js';
+import { itemContext } from './context/context.js';
 
 import './sass/main.scss';
 import './sass/base/_base.scss';
 
-import Desserts from './components/organisms/Desserts/Desserts.jsx';
+import Products from './components/organisms/Products/Products.jsx';
 import Cart from './components/molecules/Cart/Cart.jsx';
 import Modal from './components/molecules/Modal/Modal.jsx';
 
 export default function App() {
-  const [dessertItems, setDessertItems] = useState([]);
+  const [item, setItem] = useState([]);
   const [isActive, setIsActive] = useState(false);
 
   const toggleModal = () => {
     setIsActive(!isActive);
   }
 
-  const totalPrice = [...dessertItems].reduce((accumulator, currentValue) => accumulator + (currentValue.price * currentValue.count), 0);
+  const totalPrice = [...item].reduce((accumulator, currentValue) => accumulator + (currentValue.price * currentValue.count), 0);
 
   const resetState = () => {
     //empties the array
-    setDessertItems(arr => []);
+    setItem(arr => []);
     //resets the modal
     toggleModal();
   }
 
   return (
     <main>
-      <DessertContext.Provider value={[dessertItems, setDessertItems]}>
+      <itemContext.Provider value={[item, setItem]}>
         <div className='page'>
           <div className='page__container'>
-            <Desserts />
+            <Products />
             <Cart toggleModal={toggleModal} totalPrice={totalPrice} />
           </div>
           {isActive ? (<Modal resetState={resetState} totalPrice={totalPrice} isActive={isActive}/>) : null }
         </div>
-      </DessertContext.Provider>
+      </itemContext.Provider>
     </main>
   )
 }

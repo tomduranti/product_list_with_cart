@@ -3,7 +3,7 @@ import './_ListItem.scss';
 export default function ListItem({ description, price, count, isActive }) {
     return (
         <div className="list_item__info">
-            <div className={`list_item__description  ${isActive && 'list_item__description--modal'}  text_preset_4--bold`}>
+            <div className={`list_item__description  ${isActive ? 'list_item__description--modal' : ''}  text_preset_4--bold`}>
                 {description}
             </div>
             <div className='list_item__quantity_and_price  text_preset_4--bold'>

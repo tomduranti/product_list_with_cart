@@ -1,10 +1,10 @@
 import { useContext } from 'react';
-import { DessertContext } from '../../../context/context.js';
+import { itemContext } from '../../../context/context.js';
 
 import './_Cart.scss';
 
 import emptyCartImage from '../../../assets/icon/illustration_empty_cart.svg';
-import CarbonNeutralInfo from '../../atoms/CarbonNeutralInfo/CarbonNeutralInfo.jsx';
+import carbonIcon from '../../../assets/icon/icon_carbon_neutral.svg';
 import ButtonOrder from '../../atoms/Button/ButtonOrder.jsx';
 import ButtonDelete from '../../atoms/Button/ButtonDelete.jsx';
 import TotalOrder from '../../atoms/TotalOrder/TotalOrder.jsx';
@@ -14,18 +14,18 @@ import useCart from './useCart.js';
 
 export default function Cart({ toggleModal, totalPrice }) {
 
-     const [dessertItems] = useContext(DessertContext);
+     const [items] = useContext(itemContext);
 
     const {
         totalCount,
         deleteGridItem,
     } = useCart()
 
-    const listItems = dessertItems.map(dessertItem =>
-        <li className='list_item' key={dessertItem.id}>
+    const listItems = items.map(item =>
+        <li className='list_item' key={item.id}>
             <article className='list_item__item'>
-                <ListItem description={dessertItem.description} price={dessertItem.price} id={dessertItem.id} count={dessertItem.count} />
-                <ButtonDelete onClick={() => deleteGridItem(dessertItem.id)} />
+                <ListItem description={item.description} price={item.price} id={item.id} count={item.count} />
+                <ButtonDelete onClick={() => deleteGridItem(item.id)} />
             </article>
         </li>
     )
@@ -41,7 +41,12 @@ export default function Cart({ toggleModal, totalPrice }) {
                                 {listItems}
                                 <li><TotalOrder totalPrice={totalPrice} /></li>
                             </ul>
-                            <CarbonNeutralInfo />
+                            <div className='carbon_neutral_info'>
+                                <div className="carbon_neutral_info__container">
+                                    <img className='carbon_neutral_info__image' src={carbonIcon} alt='carbon neutral image' />
+                                    <span className='carbon_neutral_info__text  text_preset_4'>This is a <span className='text_preset_4--bold'>carbon-neutral</span> delivery</span>
+                                </div>
+                            </div>
                             <ButtonOrder text={'confirm order'} onClick={toggleModal} />
                         </>
                     ) : (

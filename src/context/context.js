@@ -1,3 +1,3 @@
 import { createContext } from 'react';
 
-export const DessertContext = createContext();
+export const itemContext = createContext();

@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { DessertContext } from '../../../context/context.js';
+import { itemContext } from '../../../context/context.js';
 
 import './_Modal.scss';
 
@@ -9,17 +9,17 @@ import ButtonOrder from '../../atoms/Button/ButtonOrder.jsx';
 import ListItem from '../../atoms/ListItem/ListItem.jsx';
 
 export default function Modal({ resetState, totalPrice, isActive }) {
-    const [dessertItems] = useContext(DessertContext);
+    const [items] = useContext(itemContext);
 
-    const listItems = dessertItems.map(dessertItem => {
+    const listItems = items.map(item => {
         return (
-            <li className='list_item' key={dessertItem.id}>
+            <li className='list_item' key={item.id}>
                 <article className='list_item__item'>
                     <div className="list_item__thumbnail_and_info">
-                        <img className='modal__thumbnail' src={dessertItem.thumbnail} alt='' />
-                        <ListItem isActive={isActive} description={dessertItem.description} price={dessertItem.price} id={dessertItem.id} count={dessertItem.count} />
+                        <img className='modal__thumbnail' src={item.thumbnail} alt='' />
+                        <ListItem isActive={isActive} description={item.description} price={item.price} id={item.id} count={item.count} />
                     </div>
-                    <span className='list_item__total_price list_item__total_price--modal  text_preset_3'>${(dessertItem.price * dessertItem.count).toFixed(2)}</span>
+                    <span className='list_item__total_price list_item__total_price--modal  text_preset_3'>${(item.price * item.count).toFixed(2)}</span>
                 </article>
             </li>
         )
